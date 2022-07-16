@@ -1,0 +1,7 @@
+[submodule "java-hexagonal-architecture-boilerplate"]
+path = projects/java-hexagonal-architecture-boilerplate
+url = git@github.com:lordking/java-hexagonal-architecture-boilerplate.git
+
+[submodule "spring-data-jpa-course"]
+path = projects/spring-data-jpa-course
+url = git@github.com:lordking/spring-data-jpa-course.git
