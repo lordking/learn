@@ -1,0 +1,117 @@
+@startuml 定义数据
+left to right direction
+
+' 角色
+' ##################################
+actor "系统用户" as sysuser
+
+
+rectangle "定义数据" {
+
+    ' 用例
+    ' ##################################
+
+    usecase "配置数据结点" as manage_node
+    usecase "定义元数据" as manage_schema
+    usecase "配置插件(暂时不做)" as manage_plugins
+    usecase "结点关系(暂时不做)" as manage_connector
+
+
+    ' 关系
+    ' ##################################
+
+    sysuser --> manage_node
+    manage_node ..> manage_schema:extend
+    manage_node ..> manage_plugins:extend
+    manage_node ..> manage_connector:extend
+}
+
+note bottom of manage_node
+数据节点为一个树形结构。
+end note
+
+note right of manage_schema
+如果该节点是实体
+使用JSON Schema作为元数据定义。
+end note
+
+@enduml
+
+@startuml 录入数据
+left to right direction
+
+actor "系统管理员" as sysuser
+
+rectangle "录入数据" {
+
+    ' 用例
+    ' ##################################
+
+    usecase "录入数据" as input_data
+    usecase "创建/编辑一个数据" as save_item
+    usecase "分页查询数据" as query_items
+
+    ' 关系
+    ' ##################################
+
+    sysuser --> input_data
+    input_data ..> save_item: include
+    input_data ..> query_items: include
+}
+
+@enduml
+
+@startuml 渲染网页
+left to right direction
+
+actor "系统管理员" as sysuser
+actor "客户端容器" as clientContainer
+
+rectangle "渲染网页" {
+
+    ' 用例
+    ' ##################################
+
+    usecase "导入模板(暂时不做)" as load_templates
+    usecase "预览网页(暂时不做)" as preview_pages
+    usecase "发布网页（暂时不做）" as publish_pages
+    usecase "实时动态网页" as render_pages
+    usecase "生成静态网页（暂时不做）" as build_pages
+
+    ' 关系
+    ' ##################################
+
+    sysuser --> load_templates
+    sysuser --> preview_pages
+    sysuser --> publish_pages
+    publish_pages ..> build_pages:include
+    preview_pages ..> render_pages:include
+    publish_pages --> clientContainer
+}
+
+@enduml
+
+@startuml 客户端展示
+left to right direction
+
+actor "Web渲染服务" as renderService
+actor "可配置数据服务" as dataService
+
+rectangle "客户端展示" {
+
+    ' 用例
+    ' ##################################
+
+    usecase "在线展示" as online_show
+    usecase "离线展示（暂时不做）" as offline_show
+    usecase "同步客户端组件(暂时不做)" as sync_dlls
+
+    ' 关系
+    ' ##################################
+
+    renderService --> online_show
+    renderService --> offline_show
+    dataService --> sync_dlls
+}
+
+@enduml

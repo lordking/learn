@@ -1,0 +1,35 @@
+@startuml 接口资料创建发布过程
+
+|程序员|
+start
+: 编写或开发接口 ;
+
+|#AntiqueWhite|Insomnia插件|
+: API服务配置 ;
+: 自动拦截接口资料 ;
+note right: 接口请求、输入数据、返回结果
+: 同步接口资料 ;
+
+|#AntiqueWhite|API Workshop|
+: 接受接口资料 ;
+: 查询接口 ;
+: 编辑接口资料 ;
+note right: 编辑接口说明、字段说明。
+: 创建文档 ;
+: 修改文档 ;
+note right: 添加或移除接口。
+: 编辑文档 ;
+: 预览文档 ;
+note right: 支持API Blueprint+HTML两种方式查看
+: 发布文档 ;
+
+fork
+    | 质量管理平台-接口平台|
+    : 接受同步的接口文档和测试数据 ;
+fork again
+    | 开放平台-接口文档|
+    : 接受同步的接口文档 ;
+endfork
+stop
+
+@enduml

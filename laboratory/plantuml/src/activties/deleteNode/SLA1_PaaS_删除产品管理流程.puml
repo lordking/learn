@@ -1,0 +1,17 @@
+@startuml
+
+(*)--> "使用接口工具
+        调用删除接口"
+ --> "根据id集合去data_node表
+        找到所有结点List"
+ --> "对结点List按照路径深度分组转成结点map并倒序"
+ --> [key为路径深度，结点List作为value]"遍历结点map，取出每一个value并遍历"
+ if "根据dataNode的路径检查是否是用户产品"
+   -->[false] "抛出相应的异常"
+   -->[Ending process] (*)
+ else
+   -->[true] "调用删除单个结点的方法"
+   --> "Another activity"
+   --> (*)
+
+@enduml

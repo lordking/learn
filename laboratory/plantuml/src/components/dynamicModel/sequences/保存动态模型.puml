@@ -1,0 +1,22 @@
+@startuml
+title 保存动态模型
+autonumber
+boundary Web管理后台
+participant 数据结点服务
+participant 数据库
+participant 实体类加载器
+
+
+Web管理后台 -> 数据结点服务: 创建结点（JSON Schema对象）
+activate 数据结点服务
+数据结点服务 -> 数据库: 创建模型（JSON Schema对象）
+数据结点服务 -> 实体类加载器: 生成class文件（jsonSchema）
+deactivate 数据结点服务
+== 更新模型 ==
+Web管理后台 -> 数据结点服务: 更新结点（JSON Schema对象）
+activate 数据结点服务
+数据结点服务 -> 数据库: 更新模型（JSON Schema对象+uuid）
+数据结点服务 -> 实体类加载器: 生成class文件（jsonSchema）
+deactivate 数据结点服务
+
+@enduml

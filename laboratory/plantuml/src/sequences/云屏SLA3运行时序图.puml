@@ -1,0 +1,39 @@
+@startuml
+title SLA3初始化时序图
+boundary 云屏管理系统
+participant 对象管理模块
+participant 数据结点服务
+participant hibernate监听器
+participant sql语句服务
+database 鲸云数据库
+云屏管理系统 -> 对象管理模块: 保存数据结点对象（JSON）
+
+activate 对象管理模块
+对象管理模块  -> 数据结点服务: 保存数据结点
+activate 数据结点服务
+数据结点服务 -> 鲸云数据库: 保存数据结点
+
+数据结点服务  -> hibernate监听器: 根据元数据的JsonSchema\n创建数据源模型
+deactivate 数据结点服务
+
+activate hibernate监听器
+hibernate监听器  -> hibernate监听器: 拦截DDL语句
+activate hibernate监听器 #DarkSalmon
+deactivate hibernate监听器
+hibernate监听器  -> 鲸云数据库: 保存DDL语句
+deactivate hibernate监听器
+
+对象管理模块 -> 对象管理模块: 获取DDL语句和初始化数据
+activate 对象管理模块 #DarkSalmon
+deactivate 对象管理模块
+
+对象管理模块 -> sql语句服务: 执行DDL语句并初始化数据（NIO）
+activate sql语句服务
+sql语句服务 -> sql语句服务: 执行DDL语句
+activate sql语句服务
+deactivate sql语句服务
+deactivate sql语句服务
+deactivate 对象管理模块
+
+
+@enduml

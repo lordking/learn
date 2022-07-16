@@ -1,0 +1,1988 @@
+{
+  "id" : 1,
+  "name" : "Name",
+  "description" : "Description",
+  "revision" : 0,
+  "lastModifiedDate" : "2022-07-04T02:49:17Z",
+  "lastModifiedAgent" : "structurizr-web/2754/diagram",
+  "properties" : {
+    "structurizr.dsl" : "d29ya3NwYWNlIHsKCiAgICAhZG9jcyAuL2RvY3MKCiAgICBtb2RlbCB7CiAgICAgICAgCiAgICAgICAgLy8gPT09PT09PT09PT0g5a6a5LmJ5YWD57SgID09PT09PT09PT09IC8vCiAgICAgICAgdXNlciA9IHBlcnNvbiAi55So5oi3IgogICAgICAgIAogICAgICAgIGVudGVycHJpc2UgIuWNj+S9nOezu+e7n+WFqOaZr+WbviIgewoKaW50ZXJuYWxDb3dvcmtTeXN0ZW0gPSBzb2Z0d2FyZVN5c3RlbSAi5Y2P5L2c57O757ufIiB7CgogICAgLy8gZ3JvdXAgIuWNj+S9nOWuouaIt+erryIgewogICAgICAgIG1heGh1Yl9tb2JpbGVfY2xpZW50ID0gY29udGFpbmVyICLljY/kvZznp7vliqjlrqLmiLfnq68iCiAgICAgICAgbWF4aHViX3dvcmtfZnJhbWV3b3JrID0gY29udGFpbmVyICLljY/kvZxQQ+WuouaIt+erryIKICAgIC8vIH0KCiAgICAvLyBncm91cCAi5Y2P5L2cV2Vi5pyN5YqhIiB7CiAgICAgICAgbWF4aHViX3dvcmtfYmZmID0gY29udGFpbmVyICLljY/kvZxXZWLmnI3liqEiCiAgICAgICAgbWF4aHViX3dvcmtfdG9vbF9ub3RlID0gY29udGFpbmVyICLljY/kvZznrJTorrBXZWLmnI3liqEiCiAgICAgICAgbWF4aHViX3dvcmtfbWhlID0gY29udGFpbmVyICLljY/kvZzooajmoLxXZWLmnI3liqEiCiAgICAgICAgbWF4aHViX3dvcmtfb2ZmaWNpYWxfd2Vic2l0ZSA9IGNvbnRhaW5lciAi5Y2P5L2c5a6Y572RIgogICAgLy8gfQoKICAgIC8vIGdyb3VwICLljY/kvZzlkI7nq68iIHsKICAgICAgICBjb3dvcmsgPSBjb250YWluZXIgIuWNj+S9nOWQjuWPsCIKICAgICAgICBhdWRpb192aWRlbyA9IGNvbnRhaW5lciAi6Z+z6KeG6aKR5pyN5YqhIgogICAgICAgIGxpdmVfZ2F0YXdheSA9IGNvbnRhaW5lciAi6KeG6aKR5b2V5Yi25pyN5YqhIgogICAgICAgIGZpbGVfY29sbG9jdGlvbiA9IGNvbnRhaW5lciAi5paH5Lu25ZCO5Y+w5pyN5YqhIgogICAgICAgIGNvb3BlcmF0aW9uX3NlYXJjaCA9IGNvbnRhaW5lciAi5Y2P5L2c5pCc57Si5pyN5YqhIgogICAgICAgIG5vdGVib29rID0gY29udGFpbmVyICLnrJTorrDmnI3liqEiCiAgICAgICAgb25saW5lX3RhYmxlX3NlcnZlciA9IGNvbnRhaW5lciAi6KGo5qC85pyN5YqhIgogICAgICAgIG1heGh1Yl90b2RvID0gY29udGFpbmVyICLlvoXlip7mnI3liqEiCiAgICAgICAgb2ZmaWNlID0gY29udGFpbmVyICJvZmZpY2UiICJvZmZpY2Xmlofku7bpooTop4jmnI3liqEiCiAgICAgICAgb2ZmaWNlX3N0b3JhZ2UgPSBjb250YWluZXIgIm9mZmljZS1zdG9yYWdlIiAib2ZmaWNl5paH5Lu25oyC6L295pyN5YqhIgogICAgICAgIHB1c2hfc2VydmVyX3YyID0gY29udGFpbmVyICLljY/kvZzpgJrnn6XmnI3liqEiCiAgICAvLyB9CgogICAgLy8gZ3JvdXAgIuWfuuehgOiuvuaWvSIgewogICAgICAgIG15c3FsX21heGh1Yl9tYXN0ZXJfMzMxMyA9IGNvbnRhaW5lciAibXlzcWwtbWF4aHViLW1hc3Rlci0zMzEzIiAibXlzcWwtbWF4aHViLW1hc3Rlci0zMzEzLmh6LmN2dGUuY246MzMxMyIgIk15U1FMIiAiRGF0YWJhc2UiCiAgICAgICAgZXNfY2x1c3Rlcl8wMiA9IGNvbnRhaW5lciAiZXNfY2x1c3Rlcl8wMiIgImVzLWNsdXN0ZXItMDIuY3Z0YXBpLmNvbSIgIkVsYXN0aWNTZWFyY2giICJEYXRhYmFzZSIKICAgICAgICByZWRpc19tYXN0ZXJfNiA9IGNvbnRhaW5lciAicmVkaXNfbWFzdGVyXzYiICJyZWRpcy1tYXN0ZXItNi5nei5jdnRlLmNuOjYzODQiICJSZWRpcyIgIkRhdGFiYXNlIgogICAgICAgIHJlZGlzX21heGh1Yl82NzU3ID0gY29udGFpbmVyICJyZWRpc19tYXhodWJfNjc1NyIgInJlZGlzLW1heGh1Yi02NzU3Lmh6LmN2dGUuY24iICJSZWRpcyIgIkRhdGFiYXNlIgogICAgICAgIHJlZGlzX2Nvd29ya182ODIxX21hc3RlciA9IGNvbnRhaW5lciAicmVkaXNfY293b3JrXzY4MjFfbWFzdGVyIiAicmVkaXMtY293b3JrLTY4MjEtbWFzdGVyLmh6LnBhYXMuY3Z0ZWNzLmNvbSIgIlJlZGlzIiAiRGF0YWJhc2UiCiAgICAgICAgcmVkaXNfbWF4aHViX3RvZG9fNjgyMl9tYXN0ZXIgPSBjb250YWluZXIgInJlZGlzX21heGh1Yl90b2RvXzY4MjJfbWFzdGVyIiAicmVkaXMtY293b3JrLTY4MjEtbWFzdGVyLmh6LnBhYXMuY3Z0ZWNzLmNvbSIgIlJlZGlzIiAiRGF0YWJhc2UiCgogICAgICAgIGR1YmJvID0gY29udGFpbmVyICJEdWJibyIgIlpvb2tlZXBlcuaPkOS+m+WcsOWdgCIgIkR1YmJvIiAiTWlkZGxld2FyZSIKICAgICAgICB6b29rZWVwZXJfY2x1c3Rlcl8xID0gY29udGFpbmVyICJ6b29rZWVwZXItY2x1c3Rlci0xIiAiem9va2VlcGVyLWNsdXN0ZXItMS5nei5jdnRlLmNuOjIxODEiICJab29rZWVwZXIiICJNaWRkbGV3YXJlIgogICAgICAgIHJhYmJpdG1xID0gY29udGFpbmVyICJyYWJiaXRtcSIgInJhYmJpdG1xLmd6LmN2dGUuY24iICJSYWJiaXRNUSIgIk1pZGRsZXdhcmUiCiAgICAgICAgcm9ja2V0bXFfbmFtZXNydl8xID0gY29udGFpbmVyICJyb2NrZXRtcS1uYW1lc3J2LTEiICJyb2NrZXRtcS1uYW1lc3J2LTEuZ3ouY3Z0ZS5jbjo5ODc2IiAiUm9ja2V0TVEiICJNaWRkbGV3YXJlIgoKICAgICAgICBuZnNfYXVkaW9fdmlkZW8gPSBjb250YWluZXIgIuW9leWItuacjeWKoee8k+WtmCIgIuaMgui9veeCue+8muW9leWItuacjeWKoee8k+WtmCIgIk5GUyIgInN0b3JhZ2UiCiAgICAgICAgbmZzX29mZmljZSA9IGNvbnRhaW5lciAiTkZTL29mZmljZSIgICJvZmZpY2Xmlofku7bnvJPlrZjvvIzmjILovb3ngrnvvJpvZmZpY2UiICJORlMiICJzdG9yYWdlIgogICAgLy8gfSAgICAgIAp9CgovLyBncm91cCAiTUFYSFVC5YWx5Lqr5Lia5YqhIiB7CiAgICBwaXZvdCA9IHNvZnR3YXJlc3lzdGVtICJwaXZvdCIgIk1BWEhVQui0puWPt+ezu+e7n++8jOaPkOS+m+S8geS4muS/oeaBr+OAgeS8geS4mumAmuiur+W9leOAgei0puWPt+eZu+W9leOAgeazqOWGjOOAgeiupOivgeacjeWKoSIgIkV4aXN0aW5nIFN5c3RlbSIKICAgIGFpcmRpc2sgPSBzb2Z0d2FyZXN5c3RlbSAiYWlyZGlzayIgIk1BWEhVQuS6keebmO+8jOaPkOS+m+aJq+eggeW4pui1sOOAgeS4quS6uuaWh+eov+WtmOWCqOacjeWKoSIgIkV4aXN0aW5nIFN5c3RlbSIKLy8gfQoKLy8gZ3JvdXAgIk1BWEhVQuS8muiuruS4muWKoSIgewogICAgbWVldGluZyA9IHNvZnR3YXJlc3lzdGVtICJtZWV0aW5nIiAiTUFYSFVC5Lya6K6u566h55CG5pyN5Yqh77yM5o+Q5L6b5Lya6K6u5Yib5bu65oiW6aKE57qm44CB5p+l6K+i562J5pyN5YqhIiAiRXhpc3RpbmcgU3lzdGVtIgogICAgcm9vbSA9IHNvZnR3YXJlc3lzdGVtICJyb29tIiAi5Lya6K6u5a6k566h55CG5pyN5Yqh77yM5o+Q5L6b5Lya6K6u5a6k55qEQ1JVROetieacjeWKoe+8jOS7peWPiuWFtuWFs+iBlOeahOiuvuWkh+acjeWKoSIgIkV4aXN0aW5nIFN5c3RlbSIKLy8gfQoKLy8gZ3JvdXAgIumyuOS6kSIgewogICAgY3N0b3JlID0gc29mdHdhcmVzeXN0ZW0gImNzdG9yZSIgIumyuOS6keaWh+S7tuWtmOWCqOacjeWKoe+8jOaPkOS+m+S6keerr+aWh+S7tueahOS4iuS8oOOAgeS4i+i9veacjeWKoSIgIkV4aXN0aW5nIFN5c3RlbSIKICAgIHNob3J0dXJsID0gc29mdHdhcmVzeXN0ZW0gInNob3J0dXJsIiAi55+t6ZO+5o6l5pyN5Yqh77yM5o+Q5L6b5oqKVVJM6Lev5b6E6L2s5o2i5Li65pu055+t55qE6ZO+5o6lIiAiRXhpc3RpbmcgU3lzdGVtIgogICAgY2xvdWRfc3RhdGljID0gc29mdHdhcmVzeXN0ZW0gImNsb3VkX3N0YXRpYyIgIuS4uuWJjeerr+aJk+WMheeahOmdmeaAgeaWh+S7tuaPkOS+m0NETuWKoOmAn+acjeWKoSIgIkV4aXN0aW5nIFN5c3RlbSIKICAgIHNlbnRyeUhvc3QgPSBzb2Z0d2FyZXN5c3RlbSAic2VudHJ5SG9zdCIgIuaPkOS+m+WJjeerr+W8guW4uOaXpeW/l+S4iuaKpSIgIkV4aXN0aW5nIFN5c3RlbSIKICAgIGZyaWRheSA9IHNvZnR3YXJlc3lzdGVtICJmcmlkYXkiICLmj5DkvpvnlKjmiLfooYzkuLrnmoTmlbDmja7ln4vngrnjgIHph4fpm4bjgIHmiqXooajmnI3liqEiICJFeGlzdGluZyBTeXN0ZW0iCi8vIH0KCm1pbmRsaW5rZXIgPSBzb2Z0d2FyZVN5c3RlbSAibWluZGxpbmtlciIgIk1M5ZCO5Y+wQVBJ5pyN5Yqh77yM5o+Q5L6b6L+I6IGG6Z+z6KeG6aKR5ZCO5Y+wQVBJ5pyN5YqhIiAiRXhpc3RpbmcgU3lzdGVtIgpzZWV3b2ltID0gc29mdHdhcmVTeXN0ZW0gIuW4jOayg0lN5pyN5YqhIiAi5biM5rKDSU3mnI3liqHvvIzmj5DkvpvkupLogZTnvZHljbPml7bmtojmga/mjqjpgIHmnI3liqEiICJFeGlzdGluZyBTeXN0ZW0iCnNlZXdsaXZlID0gc29mdHdhcmVTeXN0ZW0gIuW4jOayg+ebtOaSreacjeWKoSIgIiIgIkV4aXN0aW5nIFN5c3RlbSIKdGluZ3d1ID0gc29mdHdhcmVTeXN0ZW0gInRpbmd3dSIgIuWQrOaCn+ivremfs+i9rOWGmeacjeWKoe+8jOaPkOS+m+mYv+mHjOeahOWunuaXtuivremfs+i9rOaWh+Wtl+OAgeS8muiuruaZuuiDveaRmOimgeacjeWKoSIgIkV4aXN0aW5nIFN5c3RlbSIKZW1haWwgPSBzb2Z0d2FyZVN5c3RlbSAi6YKu5Lu25pyN5YqhIiAiIiAiRXhpc3RpbmcgU3lzdGVtIgpzbXMgPSBzb2Z0d2FyZVN5c3RlbSAi5omL5py655+t5L+h5o6o6YCB5pyN5YqhIiAiIiAiRXhpc3RpbmcgU3lzdGVtIgp3eG1zZ3B1c2ggPSBzb2Z0d2FyZVN5c3RlbSAi5b6u5L+h5YWs5LyX5Y+35raI5oGv5o6o6YCBIiAiIiAiRXhpc3RpbmcgU3lzdGVtIgogICAgICAgIH0KCiAgICAgICAgLy8gPT09PT09PT09PT0g5o+P6L+w6aKG5Z+f5YaF55qE57O757uf5YWz57O7ID09PT09PT09PT09IC8vCiAgICAgICAgLy8g55So5oi3CiAgICAgICAgdXNlciAtPiBtYXhodWJfbW9iaWxlX2NsaWVudCAi5L2/55SoIgogICAgICAgIHVzZXIgLT4gbWF4aHViX3dvcmtfZnJhbWV3b3JrICLkvb/nlKgiCiAgICAgICAgdXNlciAtPiBtYXhodWJfd29ya19vZmZpY2lhbF93ZWJzaXRlICLkvb/nlKgiCiAgICAgICAgCiAgICAgICAgLy8g56e75Yqo5a6i5oi356uvCiAgICAgICAgbWF4aHViX21vYmlsZV9jbGllbnQgLT4gbWF4aHViX3dvcmtfYmZmCgogICAgICAgIC8vIFBD5a6i5oi356uvCiAgICAgICAgbWF4aHViX3dvcmtfZnJhbWV3b3JrIC0+IG1heGh1Yl93b3JrX2JmZgogICAgICAgIG1heGh1Yl93b3JrX2ZyYW1ld29yayAtPiBtYXhodWJfd29ya190b29sX25vdGUKICAgICAgICBtYXhodWJfd29ya19mcmFtZXdvcmsgLT4gbWF4aHViX3dvcmtfbWhlCiAgICAgICAgbWF4aHViX3dvcmtfZnJhbWV3b3JrIC0+IGxpdmVfZ2F0YXdheQoKICAgICAgICAvLyDljY/kvZxXZWLmnI3liqEKICAgICAgICBtYXhodWJfd29ya19iZmYgLT4gY293b3JrICJIVFRQIgogICAgICAgIG1heGh1Yl93b3JrX2JmZiAtPiBhdWRpb192aWRlbyAiSFRUUCIKICAgICAgICBtYXhodWJfd29ya19iZmYgLT4gY29vcGVyYXRpb25fc2VhcmNoCiAgICAgICAgbWF4aHViX3dvcmtfYmZmIC0+IGxpdmVfZ2F0YXdheQogICAgICAgIG1heGh1Yl93b3JrX2JmZiAtPiBvZmZpY2UgIltIVFRQXSIKICAgICAgICBtYXhodWJfd29ya19iZmYgLT4gb2ZmaWNlX3N0b3JhZ2UgIltIVFRQXSIKICAgICAgICBtYXhodWJfd29ya19iZmYgLT4gcHVzaF9zZXJ2ZXJfdjIgIuafpeivoua2iOaBr1xuW0hUVFBdIgoKICAgICAgICAvLyDljY/kvZznrJTorrBXZWLmnI3liqEKICAgICAgICBtYXhodWJfd29ya190b29sX25vdGUgLT4gY293b3JrCgogICAgICAgIC8vIOWNj+S9nOihqOagvFdlYuacjeWKoQogICAgICAgIG1heGh1Yl93b3JrX21oZSAtPiBjb3dvcmsKICAgICAgICBtYXhodWJfd29ya19taGUgLT4gb25saW5lX3RhYmxlX3NlcnZlcgoKICAgICAgICAvLyDljY/kvZzlkI7lj7DmoLjlv4PmnI3liqEKICAgICAgICBjb3dvcmsgLT4gYXVkaW9fdmlkZW8gIkhUVFAiCiAgICAgICAgY293b3JrIC0+IGZpbGVfY29sbG9jdGlvbiAiSFRUUCIKICAgICAgICBjb3dvcmsgLT4gb25saW5lX3RhYmxlX3NlcnZlciAiSFRUUCIKICAgICAgICBjb3dvcmsgLT4gbWF4aHViX3RvZG8gIkhUVFAiCiAgICAgICAgY293b3JrIC0+IG5vdGVib29rICJIVFRQIgogICAgICAgIGNvd29yayAtPiBwdXNoX3NlcnZlcl92MiAi5Y+R6YCB5raI5oGvW0hUVFBdIgoKICAgICAgICAvLyDpn7Pop4bpopHmnI3liqEKICAgICAgICAvLyBhdWRpb192aWRlbyAtPiBsaXZlX2dhdGF3YXkKCiAgICAgICAgLy8g5Y2P5L2c5paH5Lu25pyN5YqhCiAgICAgICAgZmlsZV9jb2xsb2N0aW9uIC0+IG9mZmljZQoKICAgICAgICAvLyA9PT09PT09PT09PSDmj4/ov7Dln7rnoYDorr7mlr3nmoTns7vnu5/lhbPns7sgPT09PT09PT09PT0gLy8KICAgICAgICAvLyDljY/kvZxXZWLmnI3liqEKICAgICAgICBtYXhodWJfd29ya19iZmYgLT4gcmVkaXNfbWFzdGVyXzYKCiAgICAgICAgLy8g5Y2P5L2c5ZCO5Y+w5qC45b+D5pyN5YqhCiAgICAgICAgY293b3JrIC0+IG15c3FsX21heGh1Yl9tYXN0ZXJfMzMxMwogICAgICAgIGNvd29yayAtPiByZWRpc19tYXhodWJfNjc1NwogICAgICAgIGNvd29yayAtPiByb2NrZXRtcV9uYW1lc3J2XzEKICAgICAgICBjb3dvcmsgLT4gcmVkaXNfY293b3JrXzY4MjFfbWFzdGVyCiAgICAgICAgY293b3JrIC0+IHJhYmJpdG1xCiAgICAgICAgcmFiYml0bXEgLT4gcGl2b3QKICAgICAgICByYWJiaXRtcSAtPiBtZWV0aW5nCiAgICAgICAgcmFiYml0bXEgLT4gbm90ZWJvb2sKICAgICAgICByb2NrZXRtcV9uYW1lc3J2XzEgLT4gYXVkaW9fdmlkZW8KICAgICAgICByb2NrZXRtcV9uYW1lc3J2XzEgLT4gbWF4aHViX3RvZG8KICAgICAgICByb2NrZXRtcV9uYW1lc3J2XzEgLT4gZmlsZV9jb2xsb2N0aW9uCgogICAgICAgIC8vIOmfs+inhumikeacjeWKoQogICAgICAgIGF1ZGlvX3ZpZGVvIC0+IG5mc19hdWRpb192aWRlbwogICAgICAgIGF1ZGlvX3ZpZGVvIC0+IGR1YmJvICLlj5HpgIHmtojmga/nu5nluIzmsoPnm7Tmkq3mnI3liqFbRHViYm8gU0RLXSIKICAgICAgICBhdWRpb192aWRlbyAtPiB6b29rZWVwZXJfY2x1c3Rlcl8xICJbWksgc2RrXSIKICAgICAgICBkdWJibyAtPiBzZWV3bGl2ZQogICAgICAgIHpvb2tlZXBlcl9jbHVzdGVyXzEgLT4gZHViYm8gIuWPkeeOsER1YmJv5pyN5YqhIgogICAgICAgIGF1ZGlvX3ZpZGVvIC0+IG15c3FsX21heGh1Yl9tYXN0ZXJfMzMxMyAiW21heGh1Yl9hdWRpb192aWRlb10iCgogICAgICAgIC8vIOinhumikeW9leWItuacjeWKoQogICAgICAgIGxpdmVfZ2F0YXdheSAtPiBuZnNfYXVkaW9fdmlkZW8gIuaWh+S7tuezu+e7nyIKICAgICAgICBsaXZlX2dhdGF3YXkgLT4gbXlzcWxfbWF4aHViX21hc3Rlcl8zMzEzICJbbWF4aHViX2F1ZGlvX3ZpZGVvXSIKCiAgICAgICAgLy8g5Y2P5L2c5paH5Lu25pyN5YqhCiAgICAgICAgZmlsZV9jb2xsb2N0aW9uIC0+IG15c3FsX21heGh1Yl9tYXN0ZXJfMzMxMwogICAgICAgIGZpbGVfY29sbG9jdGlvbiAtPiByb2NrZXRtcV9uYW1lc3J2XzEgIltIVFRQXSIKCiAgICAgICAgLy8g5Y2P5L2c5YWo5paH5pCc57Si5pyN5YqhCiAgICAgICAgY29vcGVyYXRpb25fc2VhcmNoIC0+IHJvY2tldG1xX25hbWVzcnZfMQogICAgICAgIGNvb3BlcmF0aW9uX3NlYXJjaCAtPiBlc19jbHVzdGVyXzAyCiAgICAgICAgY29vcGVyYXRpb25fc2VhcmNoIC0+IG15c3FsX21heGh1Yl9tYXN0ZXJfMzMxMwoKICAgICAgICAvLyDljY/kvZznrJTorrDmnI3liqEKICAgICAgICBub3RlYm9vayAtPiByZWRpc19tYXhodWJfNjc1NwogICAgICAgIG5vdGVib29rIC0+IHJvY2tldG1xX25hbWVzcnZfMQoKICAgICAgICAvLyDljY/kvZzlvoXlip7mnI3liqEKICAgICAgICBtYXhodWJfdG9kbyAtPiBteXNxbF9tYXhodWJfbWFzdGVyXzMzMTMKICAgICAgICBtYXhodWJfdG9kbyAtPiByZWRpc19tYXhodWJfdG9kb182ODIyX21hc3RlcgogICAgICAgIG1heGh1Yl90b2RvIC0+IHJhYmJpdG1xCiAgICAgICAgbWF4aHViX3RvZG8gLT4gcm9ja2V0bXFfbmFtZXNydl8xCgogICAgICAgIC8vIOWNj+S9nE9mZmljZeaWh+S7tumihOiniOacjeWKoQogICAgICAgIG9mZmljZSAtPiBuZnNfb2ZmaWNlCgogICAgICAgIC8vIOWNj+S9nE9mZmljZeaWh+S7tuS4tOaXtuWtmOWCqOacjeWKoQogICAgICAgIG9mZmljZV9zdG9yYWdlIC0+IG5mc19vZmZpY2UgIlvmlofku7bns7vnu59dIgoKICAgICAgICAvLyDljY/kvZzpgJrnn6XmnI3liqEKICAgICAgICBwdXNoX3NlcnZlcl92MiAtPiBteXNxbF9tYXhodWJfbWFzdGVyXzMzMTMgIltIVFRQXSIKCiAgICAgICAgLy8gPT09PT09PT09PT0g5o+P6L+w6aKG5Z+f5aSW55qE57O757uf5YWz57O7ID09PT09PT09PT09IC8vCiAgICAgICAgLy8g5Y2P5L2cV2Vi5pyN5YqhCiAgICAgICAgbWF4aHViX3dvcmtfYmZmIC0+IHBpdm90CiAgICAgICAgbWF4aHViX3dvcmtfYmZmIC0+IGFpcmRpc2sKICAgICAgICBtYXhodWJfd29ya19iZmYgLT4gbWVldGluZwogICAgICAgIG1heGh1Yl93b3JrX2JmZiAtPiByb29tCiAgICAgICAgbWF4aHViX3dvcmtfYmZmIC0+IGZyaWRheQogICAgICAgIG1heGh1Yl93b3JrX2JmZiAtPiBzaG9ydHVybAogICAgICAgIG1heGh1Yl93b3JrX2JmZiAtPiBjbG91ZF9zdGF0aWMKICAgICAgICBtYXhodWJfd29ya19iZmYgLT4gc2VudHJ5SG9zdAoKICAgICAgICAvLyDljY/kvZznrJTorrBXZWLmnI3liqEKICAgICAgICBtYXhodWJfd29ya190b29sX25vdGUgLT4gY2xvdWRfc3RhdGljCiAgICAgICAgbWF4aHViX3dvcmtfdG9vbF9ub3RlIC0+IHNlZXdvaW0KCiAgICAgICAgLy8g5Y2P5L2c6KGo5qC8V2Vi5pyN5YqhCiAgICAgICAgbWF4aHViX3dvcmtfbWhlIC0+IGFpcmRpc2sKICAgICAgICBtYXhodWJfd29ya19taGUgLT4gb25saW5lX3RhYmxlX3NlcnZlcgogICAgICAgIG1heGh1Yl93b3JrX21oZSAtPiBzZWV3b2ltCgogICAgICAgIC8vIOWNj+S9nOWumOe9kQogICAgICAgIG1heGh1Yl93b3JrX29mZmljaWFsX3dlYnNpdGUgLT4gZnJpZGF5CgogICAgICAgIC8vIOWNj+S9nOWQjuWPsOaguOW/g+acjeWKoQogICAgICAgIGNvd29yayAtPiByb29tCiAgICAgICAgY293b3JrIC0+IG1lZXRpbmcKICAgICAgICBjb3dvcmsgLT4gc2Vld29pbQogICAgICAgIGNvd29yayAtPiBwaXZvdAogICAgICAgIGNvd29yayAtPiBtaW5kbGlua2VyCgogICAgICAgIC8vIOmfs+inhumikeacjeWKoQogICAgICAgIGF1ZGlvX3ZpZGVvIC0+IHRpbmd3dSAiW0hUVFAvVGluZ3d1IFNES10iCiAgICAgICAgYXVkaW9fdmlkZW8gLT4gY3N0b3JlICJbQ3N0b3JlIFNES10iCiAgICAgICAgYXVkaW9fdmlkZW8gLT4gbWluZGxpbmtlciAiW0hUVFBdIgoKICAgICAgICAvLyDljY/kvZznrJTorrDmnI3liqEKICAgICAgICBub3RlYm9vayAtPiBwaXZvdAogICAgICAgIG5vdGVib29rIC0+IGNzdG9yZQogICAgICAgIG5vdGVib29rIC0+IHNlZXdvaW0KCiAgICAgICAgLy8g5Y2P5L2c5b6F5Yqe5pyN5YqhCiAgICAgICAgbWF4aHViX3RvZG8gLT4gcGl2b3QKICAgICAgICBtYXhodWJfdG9kbyAtPiBhaXJkaXNrCgogICAgICAgIC8vIOWNj+S9nOaOqOmAgeacjeWKoQogICAgICAgIHB1c2hfc2VydmVyX3YyIC0+IHNlZXdvaW0KICAgICAgICBwdXNoX3NlcnZlcl92MiAtPiBlbWFpbAogICAgICAgIHB1c2hfc2VydmVyX3YyIC0+IHd4bXNncHVzaAogICAgICAgIHB1c2hfc2VydmVyX3YyIC0+IHNtcwogICAgfQoKICAgIHZpZXdzIHsKCiAgICAgICAgc3lzdGVtbGFuZHNjYXBlICJTeXN0ZW1MYW5kc2NhcGUiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQKICAgICAgICB9CgogICAgICAgIHN5c3RlbUNvbnRleHQgaW50ZXJuYWxDb3dvcmtTeXN0ZW0gIlN5c3RlbUNvbnRleHQiIHsKICAgICAgICAgICAgaW5jbHVkZSAqCiAgICAgICAgICAgIGF1dG9MYXlvdXQKICAgICAgICB9CgogICAgICAgIGNvbnRhaW5lciBpbnRlcm5hbENvd29ya1N5c3RlbSAiQ29udGFpbmVycyIgewogICAgICAgICAgICBpbmNsdWRlICoKICAgICAgICAgICAgYXV0b0xheW91dAogICAgICAgIH0KCiAgICAgICAgc3R5bGVzIHsKICAgICAgICAgICAgZWxlbWVudCAiRXhpc3RpbmcgU3lzdGVtIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM5OTk5OTkKICAgICAgICAgICAgICAgIGNvbG9yICNmZmZmZmYKICAgICAgICAgICAgfQogICAgICAgICAgICBlbGVtZW50ICJXZWIgQnJvd3NlciIgewogICAgICAgICAgICAgICAgc2hhcGUgV2ViQnJvd3NlcgogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIk1vYmlsZSBBcHAiIHsKICAgICAgICAgICAgICAgIHNoYXBlIE1vYmlsZURldmljZUxhbmRzY2FwZQogICAgICAgICAgICB9CiAgICAgICAgICAgIGVsZW1lbnQgIkRhdGFiYXNlIiB7CiAgICAgICAgICAgICAgICBiYWNrZ3JvdW5kICM2MEE5MTcKICAgICAgICAgICAgICAgIHNoYXBlIEN5bGluZGVyCiAgICAgICAgICAgIH0KICAgICAgICAgICAgZWxlbWVudCAiTWlkZGxld2FyZSIgewogICAgICAgICAgICAgICAgYmFja2dyb3VuZCAjMDA4QTAwCiAgICAgICAgICAgIH0KICAgICAgICB9IAoKICAgICAgICB0aGVtZSBkZWZhdWx0CiAgICB9Cn0K"
+  },
+  "configuration" : { },
+  "model" : {
+    "enterprise" : {
+      "name" : "协作系统全景图"
+    },
+    "people" : [ {
+      "id" : "1",
+      "tags" : "Element,Person",
+      "name" : "用户",
+      "relationships" : [ {
+        "id" : "49",
+        "sourceId" : "1",
+        "destinationId" : "2",
+        "description" : "使用",
+        "linkedRelationshipId" : "48"
+      }, {
+        "id" : "48",
+        "tags" : "Relationship",
+        "sourceId" : "1",
+        "destinationId" : "3",
+        "description" : "使用"
+      }, {
+        "id" : "51",
+        "tags" : "Relationship",
+        "sourceId" : "1",
+        "destinationId" : "8",
+        "description" : "使用"
+      }, {
+        "id" : "50",
+        "tags" : "Relationship",
+        "sourceId" : "1",
+        "destinationId" : "4",
+        "description" : "使用"
+      } ],
+      "location" : "External"
+    } ],
+    "softwareSystems" : [ {
+      "id" : "34",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "meeting",
+      "description" : "MAXHUB会议管理服务，提供会议创建或预约、查询等服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "47",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "微信公众号消息推送",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "40",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "friday",
+      "description" : "提供用户行为的数据埋点、采集、报表服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "35",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "room",
+      "description" : "会议室管理服务，提供会议室的CRUD等服务，以及其关联的设备服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "37",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "shorturl",
+      "description" : "短链接服务，提供把URL路径转换为更短的链接",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "39",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "sentryHost",
+      "description" : "提供前端异常日志上报",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "36",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "cstore",
+      "description" : "鲸云文件存储服务，提供云端文件的上传、下载服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "41",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "mindlinker",
+      "description" : "ML后台API服务，提供迈聆音视频后台API服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "33",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "airdisk",
+      "description" : "MAXHUB云盘，提供扫码带走、个人文稿存储服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "42",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "希沃IM服务",
+      "description" : "希沃IM服务，提供互联网即时消息推送服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "46",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "手机短信推送服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "38",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "cloud_static",
+      "description" : "为前端打包的静态文件提供CDN加速服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "45",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "邮件服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "44",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "tingwu",
+      "description" : "听悟语音转写服务，提供阿里的实时语音转文字、会议智能摘要服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "43",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "希沃直播服务",
+      "location" : "Internal",
+      "documentation" : { }
+    }, {
+      "id" : "2",
+      "tags" : "Element,Software System",
+      "name" : "协作系统",
+      "relationships" : [ {
+        "id" : "83",
+        "sourceId" : "2",
+        "destinationId" : "34",
+        "linkedRelationshipId" : "82"
+      }, {
+        "id" : "140",
+        "sourceId" : "2",
+        "destinationId" : "36",
+        "description" : "[Cstore SDK]",
+        "linkedRelationshipId" : "139"
+      }, {
+        "id" : "113",
+        "sourceId" : "2",
+        "destinationId" : "33",
+        "linkedRelationshipId" : "112"
+      }, {
+        "id" : "118",
+        "sourceId" : "2",
+        "destinationId" : "40",
+        "linkedRelationshipId" : "117"
+      }, {
+        "id" : "120",
+        "sourceId" : "2",
+        "destinationId" : "37",
+        "linkedRelationshipId" : "119"
+      }, {
+        "id" : "151",
+        "sourceId" : "2",
+        "destinationId" : "47",
+        "linkedRelationshipId" : "150"
+      }, {
+        "id" : "136",
+        "sourceId" : "2",
+        "destinationId" : "41",
+        "linkedRelationshipId" : "135"
+      }, {
+        "id" : "149",
+        "sourceId" : "2",
+        "destinationId" : "45",
+        "linkedRelationshipId" : "148"
+      }, {
+        "id" : "127",
+        "sourceId" : "2",
+        "destinationId" : "42",
+        "linkedRelationshipId" : "126"
+      }, {
+        "id" : "153",
+        "sourceId" : "2",
+        "destinationId" : "46",
+        "linkedRelationshipId" : "152"
+      }, {
+        "id" : "138",
+        "sourceId" : "2",
+        "destinationId" : "44",
+        "description" : "[HTTP/Tingwu SDK]",
+        "linkedRelationshipId" : "137"
+      }, {
+        "id" : "122",
+        "sourceId" : "2",
+        "destinationId" : "38",
+        "linkedRelationshipId" : "121"
+      }, {
+        "id" : "81",
+        "sourceId" : "2",
+        "destinationId" : "32",
+        "linkedRelationshipId" : "80"
+      }, {
+        "id" : "116",
+        "sourceId" : "2",
+        "destinationId" : "35",
+        "linkedRelationshipId" : "115"
+      }, {
+        "id" : "92",
+        "sourceId" : "2",
+        "destinationId" : "43",
+        "linkedRelationshipId" : "91"
+      }, {
+        "id" : "124",
+        "sourceId" : "2",
+        "destinationId" : "39",
+        "linkedRelationshipId" : "123"
+      } ],
+      "location" : "Internal",
+      "containers" : [ {
+        "id" : "30",
+        "tags" : "Element,Container,storage",
+        "name" : "录制服务缓存",
+        "description" : "挂载点：录制服务缓存",
+        "technology" : "NFS"
+      }, {
+        "id" : "5",
+        "tags" : "Element,Container",
+        "name" : "协作Web服务",
+        "relationships" : [ {
+          "id" : "114",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "34"
+        }, {
+          "id" : "57",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "9",
+          "description" : "HTTP"
+        }, {
+          "id" : "59",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "13"
+        }, {
+          "id" : "123",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "39"
+        }, {
+          "id" : "111",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "32"
+        }, {
+          "id" : "60",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "11"
+        }, {
+          "id" : "61",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "17",
+          "description" : "[HTTP]"
+        }, {
+          "id" : "119",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "37"
+        }, {
+          "id" : "63",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "19",
+          "description" : "查询消息\n[HTTP]"
+        }, {
+          "id" : "74",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "22"
+        }, {
+          "id" : "62",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "18",
+          "description" : "[HTTP]"
+        }, {
+          "id" : "117",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "40"
+        }, {
+          "id" : "112",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "33"
+        }, {
+          "id" : "115",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "35"
+        }, {
+          "id" : "58",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "10",
+          "description" : "HTTP"
+        }, {
+          "id" : "121",
+          "tags" : "Relationship",
+          "sourceId" : "5",
+          "destinationId" : "38"
+        } ]
+      }, {
+        "id" : "26",
+        "tags" : "Element,Container,Middleware",
+        "name" : "Dubbo",
+        "description" : "Zookeeper提供地址",
+        "relationships" : [ {
+          "id" : "91",
+          "tags" : "Relationship",
+          "sourceId" : "26",
+          "destinationId" : "43"
+        } ],
+        "technology" : "Dubbo"
+      }, {
+        "id" : "4",
+        "tags" : "Element,Container",
+        "name" : "协作PC客户端",
+        "relationships" : [ {
+          "id" : "54",
+          "tags" : "Relationship",
+          "sourceId" : "4",
+          "destinationId" : "6"
+        }, {
+          "id" : "55",
+          "tags" : "Relationship",
+          "sourceId" : "4",
+          "destinationId" : "7"
+        }, {
+          "id" : "53",
+          "tags" : "Relationship",
+          "sourceId" : "4",
+          "destinationId" : "5"
+        }, {
+          "id" : "56",
+          "tags" : "Relationship",
+          "sourceId" : "4",
+          "destinationId" : "11"
+        } ]
+      }, {
+        "id" : "12",
+        "tags" : "Element,Container",
+        "name" : "文件后台服务",
+        "relationships" : [ {
+          "id" : "73",
+          "tags" : "Relationship",
+          "sourceId" : "12",
+          "destinationId" : "17"
+        }, {
+          "id" : "98",
+          "tags" : "Relationship",
+          "sourceId" : "12",
+          "destinationId" : "29",
+          "description" : "[HTTP]"
+        }, {
+          "id" : "97",
+          "tags" : "Relationship",
+          "sourceId" : "12",
+          "destinationId" : "20"
+        } ]
+      }, {
+        "id" : "10",
+        "tags" : "Element,Container",
+        "name" : "音视频服务",
+        "relationships" : [ {
+          "id" : "90",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "27",
+          "description" : "[ZK sdk]"
+        }, {
+          "id" : "141",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "41",
+          "description" : "[HTTP]"
+        }, {
+          "id" : "94",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "20",
+          "description" : "[maxhub_audio_video]"
+        }, {
+          "id" : "89",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "26",
+          "description" : "发送消息给希沃直播服务[Dubbo SDK]"
+        }, {
+          "id" : "137",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "44",
+          "description" : "[HTTP/Tingwu SDK]"
+        }, {
+          "id" : "139",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "36",
+          "description" : "[Cstore SDK]"
+        }, {
+          "id" : "88",
+          "tags" : "Relationship",
+          "sourceId" : "10",
+          "destinationId" : "30"
+        } ]
+      }, {
+        "id" : "17",
+        "tags" : "Element,Container",
+        "name" : "office",
+        "description" : "office文件预览服务",
+        "relationships" : [ {
+          "id" : "108",
+          "tags" : "Relationship",
+          "sourceId" : "17",
+          "destinationId" : "31"
+        } ]
+      }, {
+        "id" : "31",
+        "tags" : "Element,Container,storage",
+        "name" : "NFS/office",
+        "description" : "office文件缓存，挂载点：office",
+        "technology" : "NFS"
+      }, {
+        "id" : "23",
+        "tags" : "Element,Container,Database",
+        "name" : "redis_maxhub_6757",
+        "description" : "redis-maxhub-6757.hz.cvte.cn",
+        "technology" : "Redis"
+      }, {
+        "id" : "21",
+        "tags" : "Element,Container,Database",
+        "name" : "es_cluster_02",
+        "description" : "es-cluster-02.cvtapi.com",
+        "technology" : "ElasticSearch"
+      }, {
+        "id" : "28",
+        "tags" : "Element,Container,Middleware",
+        "name" : "rabbitmq",
+        "description" : "rabbitmq.gz.cvte.cn",
+        "relationships" : [ {
+          "id" : "82",
+          "tags" : "Relationship",
+          "sourceId" : "28",
+          "destinationId" : "34"
+        }, {
+          "id" : "80",
+          "tags" : "Relationship",
+          "sourceId" : "28",
+          "destinationId" : "32"
+        }, {
+          "id" : "84",
+          "tags" : "Relationship",
+          "sourceId" : "28",
+          "destinationId" : "14"
+        } ],
+        "technology" : "RabbitMQ"
+      }, {
+        "id" : "14",
+        "tags" : "Element,Container",
+        "name" : "笔记服务",
+        "relationships" : [ {
+          "id" : "142",
+          "tags" : "Relationship",
+          "sourceId" : "14",
+          "destinationId" : "32"
+        }, {
+          "id" : "103",
+          "tags" : "Relationship",
+          "sourceId" : "14",
+          "destinationId" : "29"
+        }, {
+          "id" : "143",
+          "tags" : "Relationship",
+          "sourceId" : "14",
+          "destinationId" : "36"
+        }, {
+          "id" : "144",
+          "tags" : "Relationship",
+          "sourceId" : "14",
+          "destinationId" : "42"
+        }, {
+          "id" : "102",
+          "tags" : "Relationship",
+          "sourceId" : "14",
+          "destinationId" : "23"
+        } ]
+      }, {
+        "id" : "13",
+        "tags" : "Element,Container",
+        "name" : "协作搜索服务",
+        "relationships" : [ {
+          "id" : "100",
+          "tags" : "Relationship",
+          "sourceId" : "13",
+          "destinationId" : "21"
+        }, {
+          "id" : "99",
+          "tags" : "Relationship",
+          "sourceId" : "13",
+          "destinationId" : "29"
+        }, {
+          "id" : "101",
+          "tags" : "Relationship",
+          "sourceId" : "13",
+          "destinationId" : "20"
+        } ]
+      }, {
+        "id" : "29",
+        "tags" : "Element,Container,Middleware",
+        "name" : "rocketmq-namesrv-1",
+        "description" : "rocketmq-namesrv-1.gz.cvte.cn:9876",
+        "relationships" : [ {
+          "id" : "86",
+          "tags" : "Relationship",
+          "sourceId" : "29",
+          "destinationId" : "16"
+        }, {
+          "id" : "85",
+          "tags" : "Relationship",
+          "sourceId" : "29",
+          "destinationId" : "10"
+        }, {
+          "id" : "87",
+          "tags" : "Relationship",
+          "sourceId" : "29",
+          "destinationId" : "12"
+        } ],
+        "technology" : "RocketMQ"
+      }, {
+        "id" : "24",
+        "tags" : "Element,Container,Database",
+        "name" : "redis_cowork_6821_master",
+        "description" : "redis-cowork-6821-master.hz.paas.cvtecs.com",
+        "technology" : "Redis"
+      }, {
+        "id" : "9",
+        "tags" : "Element,Container",
+        "name" : "协作后台",
+        "relationships" : [ {
+          "id" : "72",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "19",
+          "description" : "发送消息[HTTP]"
+        }, {
+          "id" : "68",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "12",
+          "description" : "HTTP"
+        }, {
+          "id" : "70",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "16",
+          "description" : "HTTP"
+        }, {
+          "id" : "133",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "42"
+        }, {
+          "id" : "79",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "28"
+        }, {
+          "id" : "132",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "34"
+        }, {
+          "id" : "67",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "10",
+          "description" : "HTTP"
+        }, {
+          "id" : "75",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "20"
+        }, {
+          "id" : "135",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "41"
+        }, {
+          "id" : "76",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "23"
+        }, {
+          "id" : "71",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "14",
+          "description" : "HTTP"
+        }, {
+          "id" : "78",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "24"
+        }, {
+          "id" : "69",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "15",
+          "description" : "HTTP"
+        }, {
+          "id" : "134",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "32"
+        }, {
+          "id" : "77",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "29"
+        }, {
+          "id" : "131",
+          "tags" : "Relationship",
+          "sourceId" : "9",
+          "destinationId" : "35"
+        } ]
+      }, {
+        "id" : "3",
+        "tags" : "Element,Container",
+        "name" : "协作移动客户端",
+        "relationships" : [ {
+          "id" : "52",
+          "tags" : "Relationship",
+          "sourceId" : "3",
+          "destinationId" : "5"
+        } ]
+      }, {
+        "id" : "20",
+        "tags" : "Element,Container,Database",
+        "name" : "mysql-maxhub-master-3313",
+        "description" : "mysql-maxhub-master-3313.hz.cvte.cn:3313",
+        "technology" : "MySQL"
+      }, {
+        "id" : "7",
+        "tags" : "Element,Container",
+        "name" : "协作表格Web服务",
+        "relationships" : [ {
+          "id" : "129",
+          "tags" : "Relationship",
+          "sourceId" : "7",
+          "destinationId" : "42"
+        }, {
+          "id" : "66",
+          "tags" : "Relationship",
+          "sourceId" : "7",
+          "destinationId" : "15"
+        }, {
+          "id" : "128",
+          "tags" : "Relationship",
+          "sourceId" : "7",
+          "destinationId" : "33"
+        }, {
+          "id" : "65",
+          "tags" : "Relationship",
+          "sourceId" : "7",
+          "destinationId" : "9"
+        } ]
+      }, {
+        "id" : "8",
+        "tags" : "Element,Container",
+        "name" : "协作官网",
+        "relationships" : [ {
+          "id" : "130",
+          "tags" : "Relationship",
+          "sourceId" : "8",
+          "destinationId" : "40"
+        } ]
+      }, {
+        "id" : "15",
+        "tags" : "Element,Container",
+        "name" : "表格服务"
+      }, {
+        "id" : "16",
+        "tags" : "Element,Container",
+        "name" : "待办服务",
+        "relationships" : [ {
+          "id" : "106",
+          "tags" : "Relationship",
+          "sourceId" : "16",
+          "destinationId" : "28"
+        }, {
+          "id" : "145",
+          "tags" : "Relationship",
+          "sourceId" : "16",
+          "destinationId" : "32"
+        }, {
+          "id" : "105",
+          "tags" : "Relationship",
+          "sourceId" : "16",
+          "destinationId" : "25"
+        }, {
+          "id" : "146",
+          "tags" : "Relationship",
+          "sourceId" : "16",
+          "destinationId" : "33"
+        }, {
+          "id" : "107",
+          "tags" : "Relationship",
+          "sourceId" : "16",
+          "destinationId" : "29"
+        }, {
+          "id" : "104",
+          "tags" : "Relationship",
+          "sourceId" : "16",
+          "destinationId" : "20"
+        } ]
+      }, {
+        "id" : "25",
+        "tags" : "Element,Container,Database",
+        "name" : "redis_maxhub_todo_6822_master",
+        "description" : "redis-cowork-6821-master.hz.paas.cvtecs.com",
+        "technology" : "Redis"
+      }, {
+        "id" : "22",
+        "tags" : "Element,Container,Database",
+        "name" : "redis_master_6",
+        "description" : "redis-master-6.gz.cvte.cn:6384",
+        "technology" : "Redis"
+      }, {
+        "id" : "11",
+        "tags" : "Element,Container",
+        "name" : "视频录制服务",
+        "relationships" : [ {
+          "id" : "96",
+          "tags" : "Relationship",
+          "sourceId" : "11",
+          "destinationId" : "20",
+          "description" : "[maxhub_audio_video]"
+        }, {
+          "id" : "95",
+          "tags" : "Relationship",
+          "sourceId" : "11",
+          "destinationId" : "30",
+          "description" : "文件系统"
+        } ]
+      }, {
+        "id" : "18",
+        "tags" : "Element,Container",
+        "name" : "office-storage",
+        "description" : "office文件挂载服务",
+        "relationships" : [ {
+          "id" : "109",
+          "tags" : "Relationship",
+          "sourceId" : "18",
+          "destinationId" : "31",
+          "description" : "[文件系统]"
+        } ]
+      }, {
+        "id" : "27",
+        "tags" : "Element,Container,Middleware",
+        "name" : "zookeeper-cluster-1",
+        "description" : "zookeeper-cluster-1.gz.cvte.cn:2181",
+        "relationships" : [ {
+          "id" : "93",
+          "tags" : "Relationship",
+          "sourceId" : "27",
+          "destinationId" : "26",
+          "description" : "发现Dubbo服务"
+        } ],
+        "technology" : "Zookeeper"
+      }, {
+        "id" : "6",
+        "tags" : "Element,Container",
+        "name" : "协作笔记Web服务",
+        "relationships" : [ {
+          "id" : "125",
+          "tags" : "Relationship",
+          "sourceId" : "6",
+          "destinationId" : "38"
+        }, {
+          "id" : "126",
+          "tags" : "Relationship",
+          "sourceId" : "6",
+          "destinationId" : "42"
+        }, {
+          "id" : "64",
+          "tags" : "Relationship",
+          "sourceId" : "6",
+          "destinationId" : "9"
+        } ]
+      }, {
+        "id" : "19",
+        "tags" : "Element,Container",
+        "name" : "协作通知服务",
+        "relationships" : [ {
+          "id" : "110",
+          "tags" : "Relationship",
+          "sourceId" : "19",
+          "destinationId" : "20",
+          "description" : "[HTTP]"
+        }, {
+          "id" : "147",
+          "tags" : "Relationship",
+          "sourceId" : "19",
+          "destinationId" : "42"
+        }, {
+          "id" : "152",
+          "tags" : "Relationship",
+          "sourceId" : "19",
+          "destinationId" : "46"
+        }, {
+          "id" : "148",
+          "tags" : "Relationship",
+          "sourceId" : "19",
+          "destinationId" : "45"
+        }, {
+          "id" : "150",
+          "tags" : "Relationship",
+          "sourceId" : "19",
+          "destinationId" : "47"
+        } ]
+      } ],
+      "documentation" : { }
+    }, {
+      "id" : "32",
+      "tags" : "Element,Software System,Existing System",
+      "name" : "pivot",
+      "description" : "MAXHUB账号系统，提供企业信息、企业通讯录、账号登录、注册、认证服务",
+      "location" : "Internal",
+      "documentation" : { }
+    } ]
+  },
+  "documentation" : {
+    "sections" : [ {
+      "title" : "系统上下文",
+      "content" : "## 系统上下文\n\n![](embed:SystemContext)",
+      "format" : "Markdown",
+      "order" : 1
+    } ]
+  },
+  "views" : {
+    "systemLandscapeViews" : [ {
+      "key" : "SystemLandscape",
+      "order" : 1,
+      "paperSize" : "A0_Landscape",
+      "dimensions" : {
+        "width" : 12358,
+        "height" : 2120
+      },
+      "automaticLayout" : {
+        "implementation" : "Graphviz",
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "nodeSeparation" : 300,
+        "edgeSeparation" : 0,
+        "vertices" : false
+      },
+      "enterpriseBoundaryVisible" : true,
+      "elements" : [ {
+        "id" : "33",
+        "x" : 329,
+        "y" : 1508
+      }, {
+        "id" : "44",
+        "x" : 1079,
+        "y" : 1508
+      }, {
+        "id" : "34",
+        "x" : 1829,
+        "y" : 1508
+      }, {
+        "id" : "45",
+        "x" : 2579,
+        "y" : 1508
+      }, {
+        "id" : "35",
+        "x" : 3329,
+        "y" : 1508
+      }, {
+        "id" : "46",
+        "x" : 4079,
+        "y" : 1508
+      }, {
+        "id" : "36",
+        "x" : 4829,
+        "y" : 1508
+      }, {
+        "id" : "47",
+        "x" : 5579,
+        "y" : 1508
+      }, {
+        "id" : "37",
+        "x" : 6329,
+        "y" : 1508
+      }, {
+        "id" : "38",
+        "x" : 7079,
+        "y" : 1508
+      }, {
+        "id" : "39",
+        "x" : 7829,
+        "y" : 1508
+      }, {
+        "id" : "1",
+        "x" : 5979,
+        "y" : 208
+      }, {
+        "id" : "2",
+        "x" : 5954,
+        "y" : 908
+      }, {
+        "id" : "40",
+        "x" : 8579,
+        "y" : 1508
+      }, {
+        "id" : "41",
+        "x" : 9329,
+        "y" : 1508
+      }, {
+        "id" : "42",
+        "x" : 10079,
+        "y" : 1508
+      }, {
+        "id" : "32",
+        "x" : 10829,
+        "y" : 1508
+      }, {
+        "id" : "43",
+        "x" : 11579,
+        "y" : 1508
+      } ],
+      "relationships" : [ {
+        "id" : "83",
+        "vertices" : [ {
+          "x" : 2429,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "81",
+        "vertices" : [ {
+          "x" : 10679,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "92",
+        "vertices" : [ {
+          "x" : 11429,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "153",
+        "vertices" : [ {
+          "x" : 4679,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "120"
+      }, {
+        "id" : "151"
+      }, {
+        "id" : "140"
+      }, {
+        "id" : "118",
+        "vertices" : [ {
+          "x" : 8429,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "122"
+      }, {
+        "id" : "113",
+        "vertices" : [ {
+          "x" : 929,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "124",
+        "vertices" : [ {
+          "x" : 7679,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "127",
+        "vertices" : [ {
+          "x" : 9929,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "138",
+        "vertices" : [ {
+          "x" : 1679,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "149",
+        "vertices" : [ {
+          "x" : 3179,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "49"
+      }, {
+        "id" : "136",
+        "vertices" : [ {
+          "x" : 9179,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "116",
+        "vertices" : [ {
+          "x" : 3929,
+          "y" : 1508
+        } ]
+      } ]
+    } ],
+    "systemContextViews" : [ {
+      "softwareSystemId" : "2",
+      "key" : "SystemContext",
+      "order" : 2,
+      "paperSize" : "A0_Landscape",
+      "dimensions" : {
+        "width" : 12358,
+        "height" : 2120
+      },
+      "automaticLayout" : {
+        "implementation" : "Graphviz",
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "nodeSeparation" : 300,
+        "edgeSeparation" : 0,
+        "vertices" : false
+      },
+      "enterpriseBoundaryVisible" : true,
+      "elements" : [ {
+        "id" : "33",
+        "x" : 329,
+        "y" : 1508
+      }, {
+        "id" : "44",
+        "x" : 1079,
+        "y" : 1508
+      }, {
+        "id" : "45",
+        "x" : 1829,
+        "y" : 1508
+      }, {
+        "id" : "34",
+        "x" : 2579,
+        "y" : 1508
+      }, {
+        "id" : "46",
+        "x" : 3329,
+        "y" : 1508
+      }, {
+        "id" : "35",
+        "x" : 4079,
+        "y" : 1508
+      }, {
+        "id" : "47",
+        "x" : 4829,
+        "y" : 1508
+      }, {
+        "id" : "36",
+        "x" : 5579,
+        "y" : 1508
+      }, {
+        "id" : "37",
+        "x" : 6329,
+        "y" : 1508
+      }, {
+        "id" : "38",
+        "x" : 7079,
+        "y" : 1508
+      }, {
+        "id" : "39",
+        "x" : 7829,
+        "y" : 1508
+      }, {
+        "id" : "1",
+        "x" : 5979,
+        "y" : 208
+      }, {
+        "id" : "2",
+        "x" : 5954,
+        "y" : 908
+      }, {
+        "id" : "40",
+        "x" : 8579,
+        "y" : 1508
+      }, {
+        "id" : "41",
+        "x" : 9329,
+        "y" : 1508
+      }, {
+        "id" : "42",
+        "x" : 10079,
+        "y" : 1508
+      }, {
+        "id" : "43",
+        "x" : 10829,
+        "y" : 1508
+      }, {
+        "id" : "32",
+        "x" : 11579,
+        "y" : 1508
+      } ],
+      "relationships" : [ {
+        "id" : "83",
+        "vertices" : [ {
+          "x" : 3179,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "92",
+        "vertices" : [ {
+          "x" : 10679,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "81",
+        "vertices" : [ {
+          "x" : 11429,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "153",
+        "vertices" : [ {
+          "x" : 3929,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "151"
+      }, {
+        "id" : "120"
+      }, {
+        "id" : "140"
+      }, {
+        "id" : "118",
+        "vertices" : [ {
+          "x" : 8429,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "122"
+      }, {
+        "id" : "113",
+        "vertices" : [ {
+          "x" : 929,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "124",
+        "vertices" : [ {
+          "x" : 7679,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "149",
+        "vertices" : [ {
+          "x" : 2429,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "138",
+        "vertices" : [ {
+          "x" : 1679,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "127",
+        "vertices" : [ {
+          "x" : 9929,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "49"
+      }, {
+        "id" : "136",
+        "vertices" : [ {
+          "x" : 9179,
+          "y" : 1508
+        } ]
+      }, {
+        "id" : "116",
+        "vertices" : [ {
+          "x" : 4679,
+          "y" : 1508
+        } ]
+      } ]
+    } ],
+    "containerViews" : [ {
+      "softwareSystemId" : "2",
+      "key" : "Containers",
+      "order" : 3,
+      "dimensions" : {
+        "width" : 18479,
+        "height" : 5720
+      },
+      "automaticLayout" : {
+        "implementation" : "Graphviz",
+        "rankDirection" : "TopBottom",
+        "rankSeparation" : 300,
+        "nodeSeparation" : 300,
+        "edgeSeparation" : 0,
+        "vertices" : false
+      },
+      "externalSoftwareSystemBoundariesVisible" : true,
+      "elements" : [ {
+        "id" : "44",
+        "x" : 5012,
+        "y" : 3913
+      }, {
+        "id" : "22",
+        "x" : 9770,
+        "y" : 2113
+      }, {
+        "id" : "45",
+        "x" : 3512,
+        "y" : 3313
+      }, {
+        "id" : "23",
+        "x" : 8754,
+        "y" : 5113
+      }, {
+        "id" : "46",
+        "x" : 4262,
+        "y" : 3313
+      }, {
+        "id" : "24",
+        "x" : 7170,
+        "y" : 2713
+      }, {
+        "id" : "47",
+        "x" : 5012,
+        "y" : 3313
+      }, {
+        "id" : "25",
+        "x" : 10870,
+        "y" : 3913
+      }, {
+        "id" : "26",
+        "x" : 8312,
+        "y" : 4513
+      }, {
+        "id" : "27",
+        "x" : 8312,
+        "y" : 3913
+      }, {
+        "id" : "28",
+        "x" : 12370,
+        "y" : 3913
+      }, {
+        "id" : "29",
+        "x" : 10695,
+        "y" : 2713
+      }, {
+        "id" : "30",
+        "x" : 9062,
+        "y" : 3913
+      }, {
+        "id" : "31",
+        "x" : 11733,
+        "y" : 4513
+      }, {
+        "id" : "32",
+        "x" : 14837,
+        "y" : 5113
+      }, {
+        "id" : "10",
+        "x" : 8004,
+        "y" : 3313
+      }, {
+        "id" : "11",
+        "x" : 9370,
+        "y" : 3313
+      }, {
+        "id" : "33",
+        "x" : 15862,
+        "y" : 3913
+      }, {
+        "id" : "34",
+        "x" : 14645,
+        "y" : 4513
+      }, {
+        "id" : "12",
+        "x" : 10429,
+        "y" : 3313
+      }, {
+        "id" : "35",
+        "x" : 1279,
+        "y" : 2713
+      }, {
+        "id" : "13",
+        "x" : 10829,
+        "y" : 2113
+      }, {
+        "id" : "14",
+        "x" : 10341,
+        "y" : 4513
+      }, {
+        "id" : "36",
+        "x" : 14087,
+        "y" : 5113
+      }, {
+        "id" : "37",
+        "x" : 4262,
+        "y" : 2113
+      }, {
+        "id" : "15",
+        "x" : 5670,
+        "y" : 2713
+      }, {
+        "id" : "38",
+        "x" : 3512,
+        "y" : 2113
+      }, {
+        "id" : "16",
+        "x" : 11487,
+        "y" : 3313
+      }, {
+        "id" : "39",
+        "x" : 5012,
+        "y" : 2113
+      }, {
+        "id" : "17",
+        "x" : 11620,
+        "y" : 3913
+      }, {
+        "id" : "18",
+        "x" : 12679,
+        "y" : 2113
+      }, {
+        "id" : "19",
+        "x" : 6420,
+        "y" : 2713
+      }, {
+        "id" : "1",
+        "x" : 9795,
+        "y" : 213
+      }, {
+        "id" : "3",
+        "x" : 9770,
+        "y" : 913
+      }, {
+        "id" : "4",
+        "x" : 8933,
+        "y" : 913
+      }, {
+        "id" : "5",
+        "x" : 9770,
+        "y" : 1513
+      }, {
+        "id" : "6",
+        "x" : 6537,
+        "y" : 1513
+      }, {
+        "id" : "7",
+        "x" : 8233,
+        "y" : 1513
+      }, {
+        "id" : "8",
+        "x" : 11600,
+        "y" : 913
+      }, {
+        "id" : "9",
+        "x" : 8233,
+        "y" : 2113
+      }, {
+        "id" : "40",
+        "x" : 17829,
+        "y" : 2113
+      }, {
+        "id" : "41",
+        "x" : 2225,
+        "y" : 3913
+      }, {
+        "id" : "42",
+        "x" : 1545,
+        "y" : 5113
+      }, {
+        "id" : "20",
+        "x" : 9812,
+        "y" : 3913
+      }, {
+        "id" : "21",
+        "x" : 12062,
+        "y" : 2713
+      }, {
+        "id" : "43",
+        "x" : 13337,
+        "y" : 5113
+      } ],
+      "relationships" : [ {
+        "id" : "93"
+      }, {
+        "id" : "70",
+        "vertices" : [ {
+          "x" : 11295,
+          "y" : 2713
+        } ]
+      }, {
+        "id" : "72",
+        "vertices" : [ {
+          "x" : 7020,
+          "y" : 2713
+        } ]
+      }, {
+        "id" : "91"
+      }, {
+        "id" : "97"
+      }, {
+        "id" : "130",
+        "vertices" : [ {
+          "x" : 17604,
+          "y" : 2113
+        } ]
+      }, {
+        "id" : "51"
+      }, {
+        "id" : "74"
+      }, {
+        "id" : "53"
+      }, {
+        "id" : "76",
+        "vertices" : [ {
+          "x" : 7950,
+          "y" : 2713
+        }, {
+          "x" : 7779,
+          "y" : 3313
+        }, {
+          "x" : 7779,
+          "y" : 3613
+        }, {
+          "x" : 7933,
+          "y" : 4213
+        }, {
+          "x" : 8162,
+          "y" : 4813
+        } ]
+      }, {
+        "id" : "95"
+      }, {
+        "id" : "119",
+        "vertices" : [ {
+          "x" : 8833,
+          "y" : 1813
+        }, {
+          "x" : 4862,
+          "y" : 2113
+        } ]
+      }, {
+        "id" : "111",
+        "vertices" : [ {
+          "x" : 16395,
+          "y" : 2113
+        }, {
+          "x" : 17375,
+          "y" : 2859
+        }, {
+          "x" : 17375,
+          "y" : 4067
+        } ]
+      }, {
+        "id" : "134",
+        "vertices" : [ {
+          "x" : 9620,
+          "y" : 2413
+        }, {
+          "x" : 13070,
+          "y" : 2713
+        }, {
+          "x" : 13816,
+          "y" : 3313
+        }, {
+          "x" : 15245,
+          "y" : 4513
+        }, {
+          "x" : 15245,
+          "y" : 4813
+        } ]
+      }, {
+        "id" : "67"
+      }, {
+        "id" : "69",
+        "vertices" : [ {
+          "x" : 6270,
+          "y" : 2713
+        } ]
+      }, {
+        "id" : "132",
+        "vertices" : [ {
+          "x" : 9620,
+          "y" : 2413
+        }, {
+          "x" : 12662,
+          "y" : 2713
+        }, {
+          "x" : 14154,
+          "y" : 3913
+        } ]
+      }, {
+        "id" : "88"
+      }, {
+        "id" : "115",
+        "vertices" : [ {
+          "x" : 5612,
+          "y" : 2413
+        }, {
+          "x" : 1954,
+          "y" : 2713
+        } ]
+      }, {
+        "id" : "48"
+      }, {
+        "id" : "117",
+        "vertices" : [ {
+          "x" : 17604,
+          "y" : 2113
+        } ]
+      }, {
+        "id" : "60",
+        "vertices" : [ {
+          "x" : 10370,
+          "y" : 2113
+        }, {
+          "x" : 10370,
+          "y" : 2413
+        } ]
+      }, {
+        "id" : "141"
+      }, {
+        "id" : "87",
+        "vertices" : [ {
+          "x" : 10649,
+          "y" : 3102
+        } ]
+      }, {
+        "id" : "62",
+        "vertices" : [ {
+          "x" : 12454,
+          "y" : 2113
+        } ]
+      }, {
+        "id" : "64"
+      }, {
+        "id" : "85"
+      }, {
+        "id" : "107",
+        "vertices" : [ {
+          "x" : 11406,
+          "y" : 3043
+        } ]
+      }, {
+        "id" : "109",
+        "vertices" : [ {
+          "x" : 12970,
+          "y" : 3913
+        }, {
+          "x" : 12970,
+          "y" : 4213
+        } ]
+      }, {
+        "id" : "55"
+      }, {
+        "id" : "78"
+      }, {
+        "id" : "145",
+        "vertices" : [ {
+          "x" : 13812,
+          "y" : 3913
+        }, {
+          "x" : 14495,
+          "y" : 4813
+        } ]
+      }, {
+        "id" : "143",
+        "vertices" : [ {
+          "x" : 11583,
+          "y" : 4813
+        }, {
+          "x" : 13937,
+          "y" : 5113
+        } ]
+      }, {
+        "id" : "57"
+      }, {
+        "id" : "99"
+      }, {
+        "id" : "101",
+        "vertices" : [ {
+          "x" : 10545,
+          "y" : 2713
+        }, {
+          "x" : 10279,
+          "y" : 3313
+        } ]
+      }, {
+        "id" : "59"
+      }, {
+        "id" : "128",
+        "vertices" : [ {
+          "x" : 9620,
+          "y" : 1813
+        }, {
+          "x" : 13279,
+          "y" : 2113
+        }, {
+          "x" : 15170,
+          "y" : 2713
+        } ]
+      }, {
+        "id" : "103",
+        "vertices" : [ {
+          "x" : 10720,
+          "y" : 3913
+        }, {
+          "x" : 11029,
+          "y" : 3613
+        }, {
+          "x" : 11029,
+          "y" : 3313
+        } ]
+      }, {
+        "id" : "147",
+        "vertices" : [ {
+          "x" : 6270,
+          "y" : 3013
+        }, {
+          "x" : 3362,
+          "y" : 3313
+        }, {
+          "x" : 2825,
+          "y" : 4213
+        } ]
+      }, {
+        "id" : "126",
+        "vertices" : [ {
+          "x" : 595,
+          "y" : 2113
+        }, {
+          "x" : 216,
+          "y" : 2859
+        }, {
+          "x" : 216,
+          "y" : 4067
+        }, {
+          "x" : 595,
+          "y" : 4813
+        } ]
+      }, {
+        "id" : "105"
+      }, {
+        "id" : "94",
+        "vertices" : [ {
+          "x" : 8679,
+          "y" : 3613
+        }, {
+          "x" : 9662,
+          "y" : 3913
+        } ]
+      }, {
+        "id" : "50"
+      }, {
+        "id" : "71",
+        "vertices" : [ {
+          "x" : 7854,
+          "y" : 3313
+        }, {
+          "x" : 7854,
+          "y" : 3613
+        }, {
+          "x" : 8162,
+          "y" : 4213
+        } ]
+      }, {
+        "id" : "152",
+        "vertices" : [ {
+          "x" : 6270,
+          "y" : 3013
+        }, {
+          "x" : 4862,
+          "y" : 3313
+        } ]
+      }, {
+        "id" : "131",
+        "vertices" : [ {
+          "x" : 6479,
+          "y" : 2413
+        }, {
+          "x" : 1954,
+          "y" : 2713
+        } ]
+      }, {
+        "id" : "73"
+      }, {
+        "id" : "98",
+        "vertices" : [ {
+          "x" : 10924,
+          "y" : 3223
+        } ]
+      }, {
+        "id" : "52"
+      }, {
+        "id" : "150",
+        "vertices" : [ {
+          "x" : 6270,
+          "y" : 3013
+        } ]
+      }, {
+        "id" : "96"
+      }, {
+        "id" : "54"
+      }, {
+        "id" : "75",
+        "vertices" : [ {
+          "x" : 9220,
+          "y" : 3613
+        } ]
+      }, {
+        "id" : "90"
+      }, {
+        "id" : "110",
+        "vertices" : [ {
+          "x" : 7020,
+          "y" : 3013
+        }, {
+          "x" : 8604,
+          "y" : 3313
+        }, {
+          "x" : 8987,
+          "y" : 3613
+        } ]
+      }, {
+        "id" : "66"
+      }, {
+        "id" : "135",
+        "vertices" : [ {
+          "x" : 5520,
+          "y" : 2713
+        }, {
+          "x" : 2829,
+          "y" : 3313
+        } ]
+      }, {
+        "id" : "112",
+        "vertices" : [ {
+          "x" : 15779,
+          "y" : 2113
+        } ]
+      }, {
+        "id" : "68"
+      }, {
+        "id" : "133",
+        "vertices" : [ {
+          "x" : 4100,
+          "y" : 2713
+        }, {
+          "x" : 2608,
+          "y" : 3313
+        }, {
+          "x" : 2075,
+          "y" : 3913
+        } ]
+      }, {
+        "id" : "89",
+        "vertices" : [ {
+          "x" : 8162,
+          "y" : 3913
+        }, {
+          "x" : 8162,
+          "y" : 4213
+        } ]
+      }, {
+        "id" : "114",
+        "vertices" : [ {
+          "x" : 16029,
+          "y" : 2113
+        }, {
+          "x" : 16766,
+          "y" : 2859
+        }, {
+          "x" : 16766,
+          "y" : 3467
+        }, {
+          "x" : 16462,
+          "y" : 4213
+        } ]
+      }, {
+        "id" : "139",
+        "vertices" : [ {
+          "x" : 9220,
+          "y" : 3613
+        }, {
+          "x" : 12970,
+          "y" : 3913
+        } ]
+      }, {
+        "id" : "137"
+      }, {
+        "id" : "82"
+      }, {
+        "id" : "61",
+        "vertices" : [ {
+          "x" : 11429,
+          "y" : 2113
+        }, {
+          "x" : 12662,
+          "y" : 2713
+        }, {
+          "x" : 12662,
+          "y" : 3013
+        } ]
+      }, {
+        "id" : "80",
+        "vertices" : [ {
+          "x" : 13962,
+          "y" : 4813
+        } ]
+      }, {
+        "id" : "63",
+        "vertices" : [ {
+          "x" : 8083,
+          "y" : 2113
+        } ]
+      }, {
+        "id" : "86",
+        "vertices" : [ {
+          "x" : 11225,
+          "y" : 3282
+        } ]
+      }, {
+        "id" : "142",
+        "vertices" : [ {
+          "x" : 11583,
+          "y" : 4813
+        }, {
+          "x" : 14687,
+          "y" : 5113
+        } ]
+      }, {
+        "id" : "65"
+      }, {
+        "id" : "84",
+        "vertices" : [ {
+          "x" : 12220,
+          "y" : 4213
+        } ]
+      }, {
+        "id" : "108"
+      }, {
+        "id" : "129",
+        "vertices" : [ {
+          "x" : 7137,
+          "y" : 1813
+        }, {
+          "x" : 3362,
+          "y" : 2113
+        }, {
+          "x" : 1129,
+          "y" : 2713
+        }, {
+          "x" : 825,
+          "y" : 2859
+        }, {
+          "x" : 825,
+          "y" : 4067
+        } ]
+      }, {
+        "id" : "100"
+      }, {
+        "id" : "121",
+        "vertices" : [ {
+          "x" : 8833,
+          "y" : 1813
+        }, {
+          "x" : 4112,
+          "y" : 2113
+        } ]
+      }, {
+        "id" : "56"
+      }, {
+        "id" : "77"
+      }, {
+        "id" : "146"
+      }, {
+        "id" : "102"
+      }, {
+        "id" : "123",
+        "vertices" : [ {
+          "x" : 8833,
+          "y" : 1813
+        } ]
+      }, {
+        "id" : "144",
+        "vertices" : [ {
+          "x" : 8912,
+          "y" : 4813
+        } ]
+      }, {
+        "id" : "58"
+      }, {
+        "id" : "79",
+        "vertices" : [ {
+          "x" : 11454,
+          "y" : 2713
+        }, {
+          "x" : 12087,
+          "y" : 3313
+        } ]
+      }, {
+        "id" : "104"
+      }, {
+        "id" : "125",
+        "vertices" : [ {
+          "x" : 4112,
+          "y" : 2113
+        } ]
+      }, {
+        "id" : "106"
+      }, {
+        "id" : "148",
+        "vertices" : [ {
+          "x" : 6270,
+          "y" : 3013
+        }, {
+          "x" : 4112,
+          "y" : 3313
+        } ]
+      } ]
+    } ],
+    "configuration" : {
+      "branding" : { },
+      "styles" : {
+        "elements" : [ {
+          "tag" : "Existing System",
+          "background" : "#999999",
+          "color" : "#ffffff"
+        }, {
+          "tag" : "Web Browser",
+          "shape" : "WebBrowser"
+        }, {
+          "tag" : "Mobile App",
+          "shape" : "MobileDeviceLandscape"
+        }, {
+          "tag" : "Database",
+          "background" : "#60a917",
+          "shape" : "Cylinder"
+        }, {
+          "tag" : "Middleware",
+          "background" : "#008a00"
+        } ]
+      },
+      "themes" : [ "https://static.structurizr.com/themes/default/theme.json" ],
+      "terminology" : { },
+      "lastSavedView" : "Containers"
+    }
+  }
+}

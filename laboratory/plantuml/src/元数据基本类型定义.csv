@@ -1,0 +1,26 @@
+JsonSchema字段类型,数据类型,网络传输格式,JAVA表示类型,数据库存储类型,编辑器组件,JSON Editor 
+string,format:text,UTF-8编码的任意字符串,String,VARCHAR(255),单行文本输入框,text
+string,format:textarea,UTF-8编码的任意字符串,String,VARCHAR(255),多行文本输入框,textarea
+string,format:html,UTF-8编码、符合HTML格式的字符串,String,MEDUIMTEXT,html编辑框,Ace editor: html
+string,format:json,UTF-8编码、符合JSON格式的字符串,String,JSON,json编辑框,Ace editor: json
+string,format:timestamp,UTF-8编码、符合时间戳格式的字符串,java.sql.Timestamp,TIMESTAMP,日期时间选择框,datetime
+string,format:date,UTF-8编码、符合“yyyy-MM-dd”格式的字符串,java.sql.Date,DATE,日期选择框,date
+string,format:time,UTF-8编码、符合“HH:mm:ss”格式的字符串,java.sql.Time,TIME,时间选择框,time
+string,format:datetime,UTF-8编码、符合“yyyy-mm-dd HH:mm:ss”格式的字符串,java.util.Date,DATETIME,日期时间选择框,datetime
+string,format:email,UTF-8编码的字符串,String,VARCHAR(100),邮箱地址输入框,email
+string,format:tel,UTF-8编码的字符串,String,VARCHAR(20),电话号码,tel
+string,format:color,UTF-8编码的字符串,String,VARCHAR(24),颜色控件,color
+string,format:url,UTF-8编码的字符串,String,VARCHAR(1024),通用的URI控件,url
+string,format:video,UTF-8编码的字符串,String,VARCHAR(1024),视频文件控件,url
+string,format:audio,UTF-8编码的字符串,String,VARCHAR(1024),音频文件控件,url
+string,format:image,UTF-8编码的字符串,String,VARCHAR(1024),图片文件控件,url
+string,format:pdf,UTF-8编码的字符串,String,VARCHAR(1024),PDF文件控件,url
+string,format:karaoke,UTF-8编码的字符串,String,VARCHAR(1024),卡拉OK文件控件,url
+string,format:applink,UTF-8编码的字符串,String,VARCHAR(1024),应用链接,url
+integer,format:number,整数,Integer,INT,数字输入控件,number
+number,format:number,小数,Double,DOUBLE,数字输入控件,number
+array,format:checkbox,UTF-8编码、符合JSON数组格式的字符串，其元素值为字符串和数字类型,String,JSON,多选框,checkbook
+boolean,format:checkbox,布尔值，即true或false,Boolean,BOOLEAN,单选框,checkbook
+string,format:select,UTF-8编码的任意字符串,String,VARCHAR(255),单选框,select
+integer,format:select,整数,Integer,INT,单选框,select
+number,format:select,小数,Double,DOUBLE,单选框,select

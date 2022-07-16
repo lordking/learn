@@ -1,0 +1,73 @@
+@startuml
+title 动态模型启动时序图
+autonumber
+boundary web后台管理
+participant 启动类监听器
+participant 实体类加载器
+participant 动态模型工厂
+participant EntityDriver
+participant DataDriver
+participant RepositoryDriver
+participant bean管理器
+participant hibernate监听器
+
+web后台管理 -> 启动类监听器: 启动项目
+activate 启动类监听器
+note right of 启动类监听器
+    启动类监听器运行之前
+    spring已经初始化完成
+end note
+启动类监听器 -> 实体类加载器: 加载class（jsonSchema）
+activate 实体类加载器
+实体类加载器 -> 实体类加载器: 从数据库获取schema数据
+activate 实体类加载器 #DarkSalmon
+deactivate 实体类加载器
+
+实体类加载器 -> 动态模型工厂: 将schema数据转为class文件\n保存到磁盘
+activate 动态模型工厂
+动态模型工厂 -> EntityDriver: 转成entity的class文件保存到磁盘
+动态模型工厂 -> DataDriver: 转成dataAccess的class文件保存到磁盘
+动态模型工厂 -> RepositoryDriver: 转成repository的class文件保存到磁盘
+deactivate 动态模型工厂
+
+note right of bean管理器
+    由spring进行初始化，是一个普通的组件，
+    负责将所有的字节码数据纳入spring管理
+end note
+实体类加载器 -> bean管理器: 将所有class注册成bean
+activate bean管理器
+
+bean管理器 -> bean管理器: 注册bean
+activate bean管理器 #DarkSalmon
+bean管理器 -> bean管理器: 从磁盘读取class文件
+activate bean管理器 #DarkSalmon
+deactivate bean管理器
+
+bean管理器 -> bean管理器: 注册entity bean
+activate bean管理器 #DarkSalmon
+
+bean管理器 -> hibernate监听器: 拦截DDL语句
+activate hibernate监听器
+hibernate监听器 -> hibernate监听器: 保存相应的DDL语句
+activate hibernate监听器 #DarkSalmon
+deactivate hibernate监听器
+deactivate hibernate监听器
+deactivate bean管理器
+
+bean管理器 -> bean管理器: 删除所有旧的repository bean
+activate bean管理器 #DarkSalmon
+deactivate bean管理器
+
+bean管理器 -> bean管理器: 重新注册repository bean
+activate bean管理器 #DarkSalmon
+deactivate bean管理器
+
+bean管理器 -> bean管理器: 注册特定的dataAccess bean
+activate bean管理器 #DarkSalmon
+deactivate bean管理器
+
+deactivate bean管理器
+deactivate bean管理器
+deactivate 实体类加载器
+deactivate 启动类监听器
+@enduml

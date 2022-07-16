@@ -1,0 +1,78 @@
+@startuml
+
+title 创建SLA1和SLA2级的服务结点
+
+participant "云屏管理服务\n<Service>" as configService
+participant "数据节点服务\n<Service>" as nodeService
+participant 数据模型解析器 as modelParser
+participant 数据模型创建器 as modelCreator
+
+entity "结点模型" as nodeSchema
+
+==创建SLA1级的服务==
+autonumber
+activate configService
+configService -> nodeService: 为给定企业，用选定的产品\n创建SLA1级的服务
+activate nodeService
+
+nodeService->nodeService: 查找产品列表，获取产品所有结点
+
+loop 所有结点
+    opt 功能结点
+        nodeService->nodeService: 检查共享实体是否存在
+        opt 实体不存在
+            nodeService->modelParser: 解析结点数据模型的Schema
+                activate modelParser
+                return 动态模型
+
+                nodeService-> modelCreator: 指定实体名为Entity_Shared_<model_name>，\n创建数据模型实体
+                activate modelCreator
+                return 创建成功
+
+        end
+        nodeService -> nodeSchema: 保存结点模型\n包括：结点定义、数据模型、数据浏览器、数据编辑器
+        activate nodeSchema
+        return 保存成功
+
+    else 产品结点、目录结点
+        nodeService -> nodeSchema: 保存结点定义
+        activate nodeSchema
+        return 保存成功
+
+    end
+end
+
+return 创建成功
+
+==创建SLA2级的服务==
+autonumber
+
+configService -> nodeService: 为给定企业，用选定的产品\n创建SLA2级的服务
+activate nodeService
+nodeService->nodeService: 查找产品列表，获取产品所有结点
+
+loop 结点
+    opt 功能结点
+        nodeService->modelParser: 解析结点数据模型的Schema
+        activate modelParser
+        return 动态模型
+
+        nodeService-> modelCreator: 指定实体名为Entity_<enterprise_code>_<model_name>，\n创建数据模型实体
+        activate modelCreator
+        return 创建成功
+
+        nodeService -> nodeSchema: 保存结点模型\n包括：结点定义、数据模型、数据浏览器、数据编辑器
+        activate nodeSchema
+        return 保存成功
+
+    else 产品结点、目录结点
+        nodeService -> nodeSchema: 保存结点定义
+        activate nodeSchema
+        return 保存成功
+
+    end
+end
+
+return 创建成功
+
+@enduml

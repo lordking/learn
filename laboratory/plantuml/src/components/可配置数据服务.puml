@@ -1,0 +1,16 @@
+@startuml 可配置数据服务
+
+!include core/C4_Component.puml
+
+title 可配置数据系统 - 可配置数据服务
+
+Container_Boundary(c1, "可配置数据服务") {
+    Component(nodeService, "数据结点服务", "Service", "创建、修改、删除、查询 数据结点的服务")
+    Component(schemaService, "元数据服务", "Service", "创建、修改、删除、查询 元数据的服务")
+    Component(dataResourceService, "数据资源服务", "Service", "通过数据结点访问实体的增、删、 改、查服务。 没有实体的结点，是不能访问。 同属一个实体的结点，是可以访问。")
+    Component(dynamicModelsComponent, "动态模型驱动", "Component", "根据元数据创建，删除、更新数据结构，导出、导入数据模型结构。")
+}
+
+schemaService --> dynamicModelsComponent
+
+@enduml

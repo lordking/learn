@@ -1,0 +1,34 @@
+@startuml
+
+title 创建数据
+autonumber
+
+boundary "管理后台" as adminWeb
+participant "数据资源服务\n<Service>" as dataResourceService
+participant GraphQL as graphQL
+entity "元数据" as metadata
+participant 动态模型驱动 as data
+
+adminWeb -> dataResourceService: GraphQL 请求变更数据
+note right: 栏目路径(/api/resources/**)定位数据资源的节点
+activate dataResourceService
+    dataResourceService -> graphQL: GraphQL 执行输入
+    activate graphQL
+        graphQL -> graphQL:  GraphQL 类型及语法校验
+        note right: 系统启动初始化时，JsonSchemas 转换 GraphQL 类型
+        activate graphQL #DarkSalmon
+        deactivate graphQL
+        graphQL -> graphQL:  GraphQL 提取数据资源名称
+        activate graphQL #DarkSalmon
+        deactivate graphQL
+        graphQL -> metadata: 获取关联的元数据
+        metadata --> graphQL: 元数据
+        graphQL -> graphQL: 元数据校验数据资源
+        activate graphQL #DarkSalmon
+        deactivate graphQL
+        graphQL -> data: 保存数据资源
+        data --> graphQL: 数据资源
+    return:  变更结果
+    
+return: 响应保存成功
+@enduml

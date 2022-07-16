@@ -1,0 +1,68 @@
+@startuml component_waterdrop_service
+!include core/C4_Component.puml
+
+title 可配置数据服务组件图
+
+LAYOUT_TOP_DOWN
+
+Container(admin_web, "数据管理系统", "Javascript", "为用户提供数据资源管理功能")
+Container(config_web, "运营配置系统", "Javascript", "为运行人员提供管理主题、产品、云屏配置的功能")
+ContainerDb(waterdrop_bd, "可配置数据库", "MySQL", "存储动态模型，数据源，日志等等")
+
+Container_Boundary(waterdrop_service, "可配置数据服务"){
+    Component(resource_controller, "数据控制器", "Spring MVC GraphGL Controller", "提供管理数据资源的 API")
+    Component(node_controller, "数据结点控制器", "Spring MVC Rest Controller", "提供管理数据结点的 API")
+    Component(stat_controller, "数据统计控制器", "Spring MVC Rest Controller", "提供管理数据结点的 API")
+    Component(config_controller, "云屏配置控制器", "Spring MVC Rest Controller", "提供配置云屏的 API")
+
+    Component(resource_service, "数据资源服务", "Spring Service", "提供管理数据资源的聚合服务")
+    Component(node_service, "数据结点服务", "Spring Service", "提供管理数据结点, 数据模型，管理界面的聚合服务")
+    Component(stat_service, "数据统计服务", "Spring Service", "提供管理发布等统计的聚合服务")
+    Component(config_service, "云屏配置服务", "Spring Service", "提供配置云屏的聚合服务")
+
+    Component(repository, "数据仓库", "Spring JPA", "提供数据库管理的功能")
+
+    Component(security, "安全组件", "Spring Security", "提供用户令牌验证, 用户信息获取等等")
+
+    Component(data_driver, "动态数据模型驱动", "jvm", "提供数据资源管理的功能")
+    Component(graphGL, "graphGL组件", "graphGL", "提供graphGL模式的输入输出")
+    Component(stat, "定时统计组件", "graphGL", "定时统计相关数据并保存")
+}
+
+System_Ext(pivot_system, "账号系统", "提供统一登录，认证，获取用户信息")
+System_Ext(cstore_system, "cstore", "提供CDN的账号获取和存储文件获取，由七牛云、阿里云服务等存储文件")
+
+Rel_D(admin_web, resource_controller, "管理数据源", "async, JSON/HTTPS")
+Rel_D(admin_web, node_controller, "管理数据源", "async, JSON/HTTPS")
+Rel_D(admin_web, stat_controller, "管理统计", "async, JSON/HTTPS")
+Rel_D(config_web, config_controller, "管理云屏配置", "async, JSON/HTTPS")
+Rel_D(config_web, node_controller, "管理系统功能和产品", "async, JSON/HTTPS")
+Rel_D(config_web, resource_controller, "管理主题", "async, JSON/HTTPS")
+
+Rel_L(admin_web, cstore_system, "保存文件", "HTTPS")
+Rel_R(config_web, cstore_system, "保存文件", "HTTPS")
+
+Rel_D(resource_controller, resource_service, "使用")
+Rel_D(node_controller, node_service, "使用")
+Rel_D(stat_controller, stat_service, "使用")
+Rel_D(config_controller, config_service, "使用")
+
+Rel_D(resource_service, data_driver, "管理数据资源")
+Rel_D(node_service, data_driver, "管理数据资源表")
+
+Rel_D(resource_service, repository, "CRUD")
+Rel_D(node_service, repository, "CRUD")
+Rel_D(stat_service, repository, "CRUD")
+
+Rel_L(config_service, resource_service,"使用")
+Rel_L(config_service, node_service,"使用")
+
+Rel_L(stat, repository, "CRUD")
+
+Rel_R(security, pivot_system, "获取", "HTTPS")
+
+Rel_D(repository, waterdrop_bd, "写入和读取", "JDBC")
+Rel_D(data_driver, waterdrop_bd, "写入和读取", "JDBC")
+
+Rel(resource_service, graphGL, "使用")
+@enduml

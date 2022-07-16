@@ -1,0 +1,11 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"plantuml.diagramsRoot": "src",
+		"plantuml.exportOutDir": "out"
+	}
+}

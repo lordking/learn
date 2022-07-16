@@ -1,0 +1,92 @@
+@startuml data_model_entities
+
+title 可配置数据服务-数据实体模型
+
+class DataNode as "结点" {
+    UUID id; // 标识符
+    Timestamp createDate;
+    Timestamp updateDate;
+    String enterpriseCode; // 企业编码
+
+    String name; // 名称，英文
+    String label; // 标签
+    String icon; // 图标
+    String description; // 结点描述
+    String nodePath; // 路径，根据父结点与名称自动生成
+    String type; // 类型，英文
+    UUID dataSchemaId; // 数据模型标识符
+
+    Boolean inherited; // 是否继承的
+    Boolean modifiable; // 可修改的，管理员角色无视该属性
+    Boolean deletable; // 是否可删除
+    Boolean quickAccessible; // 是否能快捷访问
+    Boolean allowSubNode; // 是否可增加子结点
+    Integer orderNum; // 序号
+    String playerConfig; // 展示配置
+}
+
+class DataSchema as "数据模型" {
+    UUID id; // 标识符
+    Timestamp createDate;
+    Timestamp updateDate;
+    String enterpriseCode; // 企业编码
+
+    String name; // 名称，英文，首字母建议大写
+    SchemaType type; //
+    String template; // 展示模版
+    String label; // 元数据标签
+    String content; // 内容的定义
+    Boolean modifiable; // 是否可修改
+
+    UUID browserId; // 数据浏览器标识符
+    UUID editorId; //  数据编辑器的ID
+    List<UUID> finderIds; // 数据查找器的ID列表
+    UUID playerId; // 数据展示器的ID
+}
+
+class DataBrowser as "数据浏览器" {
+    UUID id; // 标识符
+    Timestamp createDate;
+    Timestamp updateDate;
+    String enterpriseCode; // 企业编码
+
+    String defaultLayout; // 默认布局
+    String layoutDefinition; // 布局的定义，用Json字符串描述
+}
+
+class DataEditor as "数据编辑器" {
+    UUID id; // 标识符
+    Timestamp createDate;
+    Timestamp updateDate;
+    String enterpriseCode; // 企业编码
+
+    String layoutDefinition; // 编辑器布局的定义，用Json字符串描述
+}
+
+class DataFinder as "数据查找器" {
+    UUID id; // 标识符
+    Timestamp createDate;
+    Timestamp updateDate;
+    String enterpriseCode; // 企业编码
+
+    String indexName; // 索引名称
+    String usages; // 用途
+    String fields; // 字段组合
+}
+
+class DataPlayer as "数据展示器" {
+    UUID id; // 标识符
+    Timestamp createDate;
+    Timestamp updateDate;
+    String enterpriseCode; // 企业编码
+
+    String fieldDefinition; // 展示字段定义
+}
+
+DataNode }|--o| DataSchema
+DataSchema ||--o| DataBrowser
+DataSchema ||--o| DataEditor
+DataSchema ||--o| DataFinder
+DataSchema ||--o| DataPlayer
+
+@enduml

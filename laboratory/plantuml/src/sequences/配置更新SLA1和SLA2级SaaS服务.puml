@@ -1,0 +1,111 @@
+@startuml
+
+title 配置更新SLA1和SLA2级SaaS服务
+
+actor "企业用户" as screenUser
+actor "云屏产品经理\n(或运营管理员)" as screenPm
+
+boundary 统一门户 as loginWeb
+boundary "运营管理前端" as screenWeb
+boundary "企业管理前端" as enterpriseWeb
+
+participant "云屏服务\n<service>\n(PaaS)" as paasService
+participant "结点服务\n<service>\n(SaaS)" as nodeService
+participant "资源服务\n<service>" as resourceService
+
+entity "数据资源" as resources
+==运营管理员配置更新==
+autonumber
+
+screenUser -> screenPm: 提交更新配置的需求
+activate screenUser
+
+activate screenPm
+screenPm -> loginWeb: 登录
+activate loginWeb
+loginWeb -> screenWeb: 跳转到运营管理主页
+activate screenWeb
+return 跳转成功
+return 登录成功
+
+screenPm -> screenWeb: 点击"配置"按钮，配置云屏:\n为企业选择新的产品和主题
+activate screenWeb
+screenWeb -> resourceService: 更新该企业的产品列表和主题列表，更新配置版本号
+activate resourceService
+
+resourceService -> resources: 保存该企业的产品Schema、主题ID列表，保存配置版本号
+activate resources
+return 保存成功
+return 更新成功
+return 配置成功
+return 告知已更新配置
+
+==企业管理员控制更新==
+autonumber
+
+screenUser -> loginWeb: 登录
+activate loginWeb
+loginWeb -> enterpriseWeb: 跳转到运营管理主页
+activate enterpriseWeb
+enterpriseWeb -> paasService: 查询配置版本是否更新
+activate paasService
+
+paasService -> resourceService: 查询企业的配置信息
+activate resourceService
+resourceService -> resources: 查询配置信息
+activate resources
+return 配置信息
+return 配置信息
+return 配置更新结果
+opt 配置有更新
+enterpriseWeb -> enterpriseWeb: 显示配置更新的提示
+else 配置未更新
+'do nothing
+end
+return 跳转成功
+return 登录成功
+
+screenUser -> enterpriseWeb: 点击"升级"按钮
+activate enterpriseWeb
+enterpriseWeb -> enterpriseWeb: 显示升级中，界面改为不可操作
+
+enterpriseWeb -> paasService:请求升级到最新的配置
+activate paasService
+
+paasService -> resourceService: 查询该企业的所有产品
+activate resourceService
+resourceService -> resources: 查询该企业的产品Schema
+activate resources
+return 产品Schema
+
+return 所有产品结点的Schema
+paasService -> nodeService: 请求更新结点
+activate nodeService
+
+opt SLA1
+nodeService -> nodeService: 解析Schema，更新元数据、数据浏览器、数据编辑器
+nodeService -> nodeService: 以扩展表等方式，实现对新的实体模型的支持
+else SLA2
+nodeService -> nodeService: 解析Schema，更新元数据、数据浏览器、数据编辑器
+nodeService -> nodeService: 更新私有的实体模型\n（卸载旧的、加载新生成的Class，更新表，更新GraphQL查询）
+end
+
+note left
+处理GraphQL查询时，根据SLA等级来路由到对应的数据表，具体的：
+对于SLA1：忽略企业编码，路由到以entity_shared为前缀的实体
+对于SLA2：取得企业编码，路由到以entity_<enterprise_code>为前缀的实体
+end note
+
+return 结点更新成功
+
+paasService -> resourceService: 更新使用的配置版本和生效状态
+activate resourceService
+resourceService -> resources: 保存使用的配置版本和生效状态
+activate resources
+return 保存成功
+return 更新成功
+return 升级成功
+enterpriseWeb -> enterpriseWeb: 刷新页面，显示管理主页
+return 响应成功
+
+@enduml

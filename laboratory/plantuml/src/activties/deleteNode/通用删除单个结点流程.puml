@@ -1,0 +1,28 @@
+@startuml
+
+(*)--> [传递DataNode]删除单个结点
+ if "判断结点是否有子节点" then
+    -->[yes] "抛出相应的异常"
+    -->[Ending process] (*)
+  else
+    -->[false] "调用删除单个结点的方法"
+    if "判断结点是否有schema" then
+       -->[yes] if "判断结点是否只被当前结点引用"
+           -->[yes] "依次删除browser，
+           editor和schema表的数据"
+          if "是否需要删除model" then
+            -->[yes] "删除model"
+            -->"删除datanode表的数据"
+          else
+            -->[false] "删除datanode表的数据"
+          endif
+       else
+         -->[false] "删除datanode表的数据"
+       endif
+    else
+       -->[false] "删除datanode表的数据"
+    endif
+
+--> (*)
+
+@enduml

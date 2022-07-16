@@ -1,0 +1,30 @@
+@startuml
+title jpa启动时序图（未完整）
+participant JpaBaseConfiguration
+participant EntityManagerFactoryBuilder
+participant EntityManagerFactoryBuilder
+participant LocalContainerEntityManagerFactoryBean
+participant DefaultPersistenceUnitManager
+
+activate JpaBaseConfiguration
+JpaBaseConfiguration -> JpaBaseConfiguration: getPackagesToScan
+JpaBaseConfiguration -> EntityManagerFactoryBuilder: build,包括设置扫描包路径，\n读取hibernate的配置等
+activate EntityManagerFactoryBuilder
+EntityManagerFactoryBuilder -> LocalContainerEntityManagerFactoryBean: 创建，并设置相关参数\n，如设置包扫描路径，数据源等
+
+activate LocalContainerEntityManagerFactoryBean
+LocalContainerEntityManagerFactoryBean -> DefaultPersistenceUnitManager: 创建
+activate DefaultPersistenceUnitManager
+LocalContainerEntityManagerFactoryBean -> LocalContainerEntityManagerFactoryBean: afterPropertiesSet
+LocalContainerEntityManagerFactoryBean -> DefaultPersistenceUnitManager: 调用afterPropertiesSet\n给managerToUse属性赋值
+DefaultPersistenceUnitManager -> DefaultPersistenceUnitManager: afterPropertiesSet
+DefaultPersistenceUnitManager -> DefaultPersistenceUnitManager: preparePersistenceUnitInfos
+DefaultPersistenceUnitManager -> DefaultPersistenceUnitManager: readPersistenceUnitInfos
+DefaultPersistenceUnitManager -> DefaultPersistenceUnitManager: buildDefaultPersistenceUnitInfo
+DefaultPersistenceUnitManager -> DefaultPersistenceUnitManager: scanPackage,扫描磁盘路径下的所有class文件
+
+LocalContainerEntityManagerFactoryBean -> LocalContainerEntityManagerFactoryBean: determinePersistenceUnitInfo
+LocalContainerEntityManagerFactoryBean -> DefaultPersistenceUnitManager: obtainDefaultPersistenceUnitInfo
+
+
+@enduml

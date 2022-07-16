@@ -1,0 +1,40 @@
+!include core/C4.puml
+
+' Styling
+' ##################################xw
+
+skinparam rectangle<<story>> {
+    StereotypeFontColor #Black
+    FontColor #000000
+    BackgroundColor #Orange
+    BorderColor #DarkBlue
+}
+
+skinparam rectangle<<activity>> {
+    StereotypeFontColor #Black
+    FontColor #000000
+    BackgroundColor #DeepSkyBlue
+    BorderColor #DarkBlue
+}
+
+skinparam rectangle<<external_activity>> {
+    StereotypeFontColor #Black
+    FontColor #000000
+    BackgroundColor #Gainsboro
+    BorderColor #DarkGrey
+}
+
+skinparam rectangle<<user_activties>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
+
+
+!define Story(e_alias, e_actor, e_iwant, e_sothat) rectangle "==e_actor\n\n [希望]e_iwant \n\n//<color:Navy><size:12>[以便]e_sothat</size></color>//" <<story>> as e_alias
+!define Activity(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:12>[e_techn]</size>//\n\n e_descr" <<activity>> as e_alias
+!define Activity_Ext(e_alias, e_label, e_techn, e_descr) rectangle "==e_label\n//<size:12>[e_techn]</size>//\n\n e_descr" <<external_activity>> as e_alias
+
+!define Activities_Boundary(e_alias, e_label) rectangle "==e_label" <<user_activties>> as e_alias

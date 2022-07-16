@@ -1,0 +1,36 @@
+@startuml 可配置数据服务
+
+package 模型{
+    [Schema]
+    [DynamicModel]
+}
+
+package 接口 {
+    component [GraphQL接口] as GraphQL
+    component [其他接口] as Common
+}
+
+folder .class文件 {
+    [Entity]
+    [Repository]
+}
+
+database MySQL {
+    [Table]
+}
+
+[Schema]-down->[DynamicModel]: 解析出
+[Schema]-right->[GraphQL]: 定义
+[DynamicModel]--->[Table]: 创建
+[DynamicModel]-right->[Entity]: 生成
+[DynamicModel]-right->[Repository]: 生成
+
+HTTP-->[GraphQL]: 请求
+[GraphQL]-->[Repository]: 反射调用
+
+HTTP-->[Common]: 请求
+[Common]-->[Repository]: 反射调用
+[Repository]-->[Table]: 访问数据
+[Repository]-left->[Entity]: 使用
+
+@enduml

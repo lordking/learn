@@ -1,0 +1,9 @@
+@startuml 可配置数据服务
+
+DynamicModelRepository --|> SLAHelper
+DynamicModelFactory --|> SLAHelper
+ConfigRepositories --|> DynamicModelRepository
+DataEntityRepositories --|> DynamicModelRepository
+SLAHelper --|> DynamicModelRepository
+
+@enduml

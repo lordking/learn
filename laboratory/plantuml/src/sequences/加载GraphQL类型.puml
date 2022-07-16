@@ -1,0 +1,34 @@
+@startuml
+title 加载GraphQL类型
+autonumber
+
+participant "数据资源服务\n<Service>" as dataResourceService
+entity "元数据" as metadata
+
+dataResourceService -> dataResourceService: 初始化
+activate dataResourceService
+dataResourceService -> metadata: 获取所有元数据
+activate metadata
+return: 元数据
+dataResourceService -> dataResourceService: 根据JsonSchema 创建GraphQL的查询入口类型
+activate dataResourceService #DarkSalmon
+deactivate dataResourceService
+
+dataResourceService -> dataResourceService: 根据JsonSchema 创建GraphQL的变更入口类型
+activate dataResourceService #DarkSalmon
+deactivate dataResourceService
+
+dataResourceService -> dataResourceService: 为的变更类型配置验证仪表盘
+activate dataResourceService #DarkSalmon
+deactivate dataResourceService
+
+dataResourceService -> dataResourceService: 为查询类型和变更类型配置抓取数据器
+activate dataResourceService #DarkSalmon
+deactivate dataResourceService
+
+dataResourceService -> dataResourceService: 初始化 GraphQL 对象
+activate dataResourceService #DarkSalmon
+deactivate dataResourceService
+
+deactivate dataResourceService
+@enduml

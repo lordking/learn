@@ -1,0 +1,36 @@
+@startuml
+title 根据ID查询单条数据
+autonumber
+participant GraphQL
+participant 动态模型
+participant dataAccess实例
+participant repository实例
+
+GraphQL -> 动态模型 : 根据ID查询数据（schema，uuid）
+activate 动态模型
+动态模型 -> 动态模型 : 读取schema和获取相应的dataAccess实例
+note left
+    根据schema对象中包含表名的字段，
+    获得相应的dataAccess实例的对象
+end note
+activate 动态模型
+deactivate 动态模型
+动态模型 -> dataAccess实例 : 根据ID查询数据（uuid）
+note left
+    调用相应的dataAccess实例
+end note
+activate dataAccess实例
+dataAccess实例 -> repository实例 : 根据ID查询数据（uuid）
+activate repository实例
+repository实例 -> dataAccess实例 : 返回查询结果
+deactivate repository实例
+dataAccess实例 -> dataAccess实例 : 数据转换
+note left
+    将数据转换成map类型
+end note
+activate dataAccess实例
+deactivate dataAccess实例
+deactivate dataAccess实例
+deactivate repository实例
+deactivate 动态模型
+@enduml

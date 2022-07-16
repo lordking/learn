@@ -1,0 +1,39 @@
+@startuml 可配置数据系统
+
+!include core/C4_Container.puml
+
+LAYOUT_TOP_DOWN
+
+title 可配置数据系统 - 容器视图
+
+' 角色
+' ##################################
+
+Person(programer, "程序员")
+
+'
+' ##################################
+
+System_Boundary(c1, "可配置数据系统") {
+    Container(configurableDataWeb, "Web端管理后台", "NodeJS/fill.js/vue.js/JSON Editor", "提供一个可视化的维护可配置 数据的Web管理后台")
+    Container(configurableDataService, "可配置数据服务", "Java/JSON Schema", "提供元数据配置服务，及其对应的数据服务。 配置服务器插件和客户端组件。前期原型使用 NodeJS，后期使用Java")
+    Container(configurableDataRender, "Web渲染服务", "NodeJS/fill.js/ejs", "与可配置数据服务交互，渲染成网页， 并发布到客户端上。支持离线和在线两种方式。")
+    Container(configurableDataContainerWindows, "客户端容器", "windows", "离线或在线显示网页，并加载组件")
+    ContainerDb(database, "数据库", "MongoDB/MySQL", "存储元数据和元数据定义的数据")
+}
+
+System_Ext(windowsHardware, "Windows系统智能显示设备")
+
+' 关系
+' ##################################
+
+Rel(programer, configurableDataWeb, "生成Docker服务", "docker")
+Rel(configurableDataWeb, configurableDataService, "调用", "REST API")
+Rel_U(configurableDataRender, configurableDataService, "调用", "Rest API/GraphQL")
+Rel_R(configurableDataService, database, "调用", "Mangoose/Hibernate")
+Rel_R(configurableDataRender, configurableDataContainerWindows, "发布", "Browser/download")
+Rel(configurableDataService, configurableDataContainerWindows, "读取配置/下载组件", "HTTP")
+
+Rel(configurableDataContainerWindows, windowsHardware, "部署")
+
+@enduml

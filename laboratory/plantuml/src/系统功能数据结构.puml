@@ -1,0 +1,69 @@
+@startuml data_model_entities
+
+title PaaS平台系统功能数据模型
+
+class enterpriseConfig as "云屏配置" {
+    UUID id; // 标识符
+    Timestamp createDate;
+    Timestamp updateDate;
+
+    String enterpriseCode; // 企业编码
+    String enterpriseName; // 企业名称
+    String products; // 产品根结点的UUID数组
+    String themes; // 主题列表，UUID字符串的数组
+    String sla; // 服务等级
+    Boolean enabled; // 生效状态
+    String latestCfgVersion; // 最新的配置版本：修改配置后更新该版本
+    String currentCfgVersion; // SaaS服务当前的配置版本：落后于配置版本时，提示用户更新
+}
+
+class theme as "云屏主题" {
+    UUID id; // 标识符
+    Timestamp createDate;
+    Timestamp updateDate;
+
+    String themeId; // 主题ID
+    String name; // 主题名称
+    String description; // 主题描述
+    String iconUrl; // 主题图标的URL
+    String version; // 主题版本
+    Boolean enabled; // 主题启用状态
+    String filePath; // 主题文件在CDN上路径
+    String fileMd5; // 主题文件哈希值
+    Integer fileSize; // 主题文件大小
+}
+
+class device as "终端设备" {
+    UUID id; // 标识符
+    Timestamp createDate;
+    Timestamp updateDate;
+
+    // 设备描述信息
+    String name; // 终端名称；激活设备时，用户定义或自动生成；可修改
+    String description；终端描述；激活设备后，管理员添加；可修改
+    String terminalId; // 终端ID；设备激活时，依据序列号和系统类型自动生成；不可修改
+    String MAC; // 终端优先网卡的MAC地址；激活设备时，从机器获取；不可修改
+    String SN; // 终端序列号；激活设备时，从机器获取；不可修改
+    String osType; // 系统类型；激活设备时，从机器获取；不可修改
+    String screenSize; // 屏幕尺寸；激活设备时，从机器获取；不可修改
+    String screenResolution; // 屏幕分辨率；激活设备时，从机器获取；不可修改
+    Timestamp registerTime; // 激活时间；在终端提交激活申请的时间；不可修改
+
+    // 设备状态信息
+    String status; // 终端状态；待审核，已激活
+    String operator; // 操作人; 管理员，终端
+    Timestamp statusUpdateTime; // 状态更新时间
+
+    // 设备主题配置
+    UUID themeId; // 主题ID
+    String themeName; // 主题名称
+    String themeVersion; // 主题版本；
+    String themeStatus; // 主题状态；未配置，未发布，发布中，已发布，已禁用
+
+    // 渲染后的资源包
+    String fileVersion; // 资源包的版本，形如1.0.0.7965b3
+    String fileMd5；// 资源包的MD5
+    Int fileSize; // 资源包文件大小
+    String fileUrl; // 资源包下载地址
+}
+@enduml

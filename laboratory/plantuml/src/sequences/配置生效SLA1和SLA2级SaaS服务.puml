@@ -1,0 +1,89 @@
+@startuml
+
+title 配置生效SLA1和SLA2级SaaS服务
+autonumber
+
+actor "云屏产品经理\n(或运营管理员)" as screenPm
+
+boundary 统一门户 as loginWeb
+boundary "运营管理前端" as screenWeb
+
+participant "账号系统\n<service>" as accountService
+participant "云屏服务\n<service>\n(PaaS)" as paasService
+participant "结点服务\n<service>\n(SaaS)" as nodeService
+participant "资源服务\n<service>" as resourceService
+
+entity "entity_000000000_config" as resources
+
+activate screenPm
+screenPm -> loginWeb: 登录
+activate loginWeb
+loginWeb -> screenWeb: 跳转到运营管理主页
+activate screenWeb
+return 跳转成功
+return 登录成功
+
+screenPm -> screenWeb: 点击"添加"按钮，添加企业：\n输入企业编码，新增一条企业配置
+activate screenWeb
+screenWeb -> accountService: 查找企业编码对应的企业信息
+activate accountService
+return 企业名称等
+
+screenWeb -> resourceService: 保存企业信息
+activate resourceService
+resourceService -> resources: 保存企业信息
+activate resources
+return 保存成功
+return 保存成功
+return 添加成功
+
+screenPm -> screenWeb: 点击"配置"按钮，配置云屏:\n为企业选择产品和主题
+activate screenWeb
+screenWeb -> resourceService: 更新该企业的产品列表和主题列表，初始化配置版本
+activate resourceService
+
+resourceService -> resources: 保存该企业的产品Schema、主题ID列表和配置版本
+activate resources
+return 保存成功
+return 更新成功
+return 配置成功
+
+screenPm -> screenWeb: 点击"生效"按钮，启用云服务:\n根据企业的配置，生成并启用云屏服务
+activate screenWeb
+
+
+screenWeb -> paasService:创建服务模型
+activate paasService
+
+paasService -> resources: 查询配置给该企业的、产品根结点的ID
+activate resources
+return 产品根结点ID的列表
+
+paasService -> nodeService: 请求通过复制的方式，创建指定ID的产品结点树
+activate nodeService
+
+opt SLA1
+nodeService -> nodeService: 解析Schema，保存元数据、数据浏览器、数据编辑器和结点数据
+nodeService -> nodeService: 如果不存在共享的实体模型，则创建该模型
+else SLA2
+nodeService -> nodeService: 解析Schema，保存元数据、数据浏览器、数据编辑器和结点数据
+nodeService -> nodeService: 创建私有的实体模型\n（生成并加载Class，创建表，更新GraphQL查询）
+end
+note left
+处理GraphQL查询时，根据SLA等级来路由到对应的数据表，具体的：
+对于SLA1：路由到以entity_shared为前缀的实体，按照企业编码查询
+对于SLA2：取得企业编码，路由到以entity_<enterprise_code>为前缀的实体
+end note
+return 结点创建成功
+
+paasService -> resourceService: 更新当前使用的配置版本到最新，更新启用状态
+activate resourceService
+resourceService -> resources: 保存配置版本和启用状态
+activate resources
+return 保存成功
+return 更新成功
+
+return 创建成功
+return 生效成功
+
+@enduml

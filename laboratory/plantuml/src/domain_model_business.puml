@@ -1,0 +1,44 @@
+@startuml domain_model_node
+title 领域模型 - 结点聚合
+
+class 结点 {
+    名称
+    结点路径
+    标题
+    图标
+    类型
+    可更改性
+    查询结点()
+    查询单个结点()
+}
+note top: 根实体, 结点路径是唯一标识符
+
+class 管理界面 {
+    数据浏览器
+    数据编辑器
+}
+
+class 数据模型 {
+    名称
+    JsonSchema
+}
+
+数据模型 -left- 管理界面
+结点 "*" -left-> 数据模型: 绑定
+@enduml
+
+@startuml domain_model_recycle_bin
+title 回收站领域模型
+
+class 回收站 {
+    创建人
+    创建时间
+    更新人
+    更新时间
+    删除人
+    删除时间
+    结点路径
+    元数据标识符
+    内容
+}
+@enduml

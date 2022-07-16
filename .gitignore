@@ -1,0 +1,7 @@
+**/**/build/
+**/**/bin/
+**/**/.structurizr
+
+tasks.csv
+.DS_Store
+*.log

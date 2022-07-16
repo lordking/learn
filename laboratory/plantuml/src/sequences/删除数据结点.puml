@@ -1,0 +1,68 @@
+@startuml
+
+title 删除数据结点
+autonumber
+
+actor 系统用户 as sysUser
+boundary 管理后台 as adminWeb
+participant "数据节点服务\n<Service>" as nodeService
+entity "数据节点" as nodes
+entity "元数据" as metadata
+entity "数据浏览器" as dataBrowser
+participant 动态模型驱动 as data
+participant 实体管理器 as beanmanager
+
+activate sysUser
+sysUser -> adminWeb: 请求删除数据结点
+activate adminWeb
+
+adminWeb -> nodeService: 删除数据结点
+activate nodeService
+
+nodeService -> nodeService: 确保存在该结点
+activate nodeService #DarkSalmon
+deactivate nodeService
+
+nodeService -> nodeService: 如果没有子结点，则删除该结点
+activate nodeService #DarkSalmon
+
+nodeService -> nodeService: 如果有元数据，则删除它
+activate nodeService #DarkSalmon
+nodeService -> data: 删除实体模型
+activate data
+
+data -> beanmanager: 移除实体Repository和DataAccess的定义
+activate beanmanager
+return: 移除成功
+
+data -> beanmanager: 移除实体Repository和DataAccess的Bean对象
+activate beanmanager
+return: 移除成功
+
+data -> beanmanager: 从类加载器卸载Entity、Repository、DataAccess的类
+activate beanmanager
+return: 移除成功
+
+data -> data: 删除Class文件
+
+return: 删除成功
+
+nodeService -> nodeService: 如果有数据浏览器，则删除它
+activate nodeService #DarkSalmon
+nodeService -> dataBrowser: 删除数据浏览器
+activate dataBrowser
+return: 删除成功
+deactivate nodeService
+
+nodeService -> metadata: 删除元数据
+activate metadata
+return: 删除成功
+deactivate nodeService
+
+nodeService -> nodes: 删除结点
+activate nodes
+return: 删除成功
+deactivate nodeService
+return: 结点删除成功
+return: 响应成功
+@enduml

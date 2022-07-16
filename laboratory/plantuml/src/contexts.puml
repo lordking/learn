@@ -1,0 +1,43 @@
+@startuml 系统上下文图
+
+!include core/C4_Context.puml
+
+
+title 水滴柔性开发平台 - 系统上下文图
+
+' 角色
+' ##################################
+
+Person(programer, "程序员")
+
+' 系统定义
+' ##################################
+
+System_Boundary(c1, "水滴柔性开发平台") {
+    System(productionLine, "生产线", "用于生成、测试、发布可配置数据系统。 并管理主题仓库、插件仓库、可配置数据 系统的docker镜像仓库及相关的企业用户 的配置资料、OTA升级")
+    System(configurableSystem, "可配置数据系统", "通过网页模板、服务器和Windows端插件、 元数据配置等方法实现内容网站、商品管理、 库存管理等数据密集型产品")
+}
+
+System_Ext(dockerImagesRepo, "Docker镜像仓库", "存放可配置数据系统的docker镜像")
+
+System_Ext(whaleCloud, "鲸云", "CVTE的云服务部署环境")
+System_Ext(portal, "统一门户", "MAXHUB的企业管理门户")
+System_Ext(privCloud, "私有云", "用户的私有化环境")
+
+
+' 关系
+' ##################################
+
+Rel(programer, productionLine, "管理生产线", "HTTP")
+Rel(programer, configurableSystem, "配置和维护", "HTTP")
+
+Rel_R(productionLine, configurableSystem, "生成/更新服务与组件", "docker/ota")
+
+Rel_L(productionLine, dockerImagesRepo, "存储docker镜像", "docker")
+Rel(productionLine, whaleCloud, "部署", "docker")
+Rel(productionLine, portal, "嵌入", "http/oauth2")
+Rel(productionLine, privCloud, "部署", "docker")
+
+
+
+@enduml

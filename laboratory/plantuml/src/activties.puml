@@ -1,0 +1,83 @@
+@startuml 用户整体活动
+
+title 整体活动图
+
+start
+: 定义插件 ;
+: 定义数据 ;
+: 录入数据 ;
+: 渲染网页 ;
+: 客户展示 ;
+stop
+
+@enduml
+
+@startuml 定义数据
+
+title 定义数据
+
+|系统用户|
+start
+
+|#AntiqueWhite|可配置数据系统|
+
+: 打开数据定义界面 ;
+: 查询数据结点 ;
+
+fork 
+    : 删除数据结点 ;
+    detach
+fork again
+    : 创建数据结点 ;
+fork again
+    : 编辑数据结点 ;
+end fork
+
+: 定义结点属性 ;
+note right: 结点名称和英文标识
+if (是否是实体) then (yes)
+    : 定义元数据 ;
+endif
+
+stop
+
+@enduml
+
+@startuml 录入数据
+
+title 定义数据
+
+|系统用户|
+start
+
+|#AntiqueWhite|可配置数据系统|
+
+: 选择栏目 ;
+note right: 栏目即为数据结点。
+
+if (栏目是实体) then (yes)
+: 分页显示栏目的数据 ;
+: 搜索数据 ;
+
+fork
+    : 删除数据 ;
+    detach
+fork again
+    : 创建数据 ;
+fork again
+    : 编辑数据 ;
+end fork
+: 显示编辑界面 ;
+note right: 根据元数据自动生成编辑界面
+
+: 录入数据 ;
+: 保存数据 ;
+note right: 根据元数据校验数据
+
+else (no)
+: 不可选择 ;
+endif
+
+stop
+
+@enduml

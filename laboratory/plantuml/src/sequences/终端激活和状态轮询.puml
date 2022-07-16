@@ -1,0 +1,76 @@
+@startuml
+
+title 终端激活和状态轮询
+
+actor 终端管理员 as admin
+boundary "云屏终端\n(客户端容器)" as screenDevice
+boundary "企业管理系统" as adminWeb
+
+
+== 轮询状态 ==
+autonumber
+activate admin
+admin -> screenDevice:启动终端，打开容器
+activate screenDevice
+
+screenDevice -> screenDevice: 检查服务器配置
+opt 配置有效，已激活
+screenDevice -> screenDevice: 开始轮询
+else 配置无效，未激活
+screenDevice -> screenDevice: 显示配置激活页面
+end
+
+screenDevice -> adminWeb: 每隔1分钟，轮询一次终端状态
+
+note left
+轮询时的参数：
+1.终端ID
+2.内容资源包的版本（当存在时）
+end note
+
+activate adminWeb
+return 当前状态
+
+opt 已提交申请（待审批）
+screenDevice -> screenDevice: 显示"已提交激活申请，请联系管理审核"
+
+else 已激活，内容资源为空
+screenDevice -> screenDevice: 如果本地有资源，则显示资源内容\n如果本地没资源，则显示"没有发布内容，请联系管理发布"
+
+else 已激活，内容资源不为空
+screenDevice -> adminWeb: 提供内容资源包版本，查询内容资源是否有更新
+activate adminWeb
+return 内容资源包文件信息（含URL）
+screenDevice -> screenDevice: 从CDN下载内容资源包，显示加载进度，显示主题页面
+
+end
+
+return 响应成功
+
+== 激活 ==
+autonumber
+
+admin -> screenDevice: 输入企业ID（服务器地址），点击"下一步"
+activate screenDevice
+screenDevice -> adminWeb: 提交激活信息，申请激活
+note left
+激活信息如下：
+1.终端名称：从机器获取
+2.终端MAC：即硬件的有线网卡的MAC地址
+3.终端SN：即硬件的序列号，从机器获取
+4.系统类型：从机器获取
+5.屏幕尺寸：从机器获取
+6.屏幕分辨率：从机器获取
+end note
+
+activate adminWeb
+return 提交成功
+
+screenDevice -> screenDevice: 显示"已提交激活申请，等管理员审批中"
+return 响应成功
+
+admin -> adminWeb: 审批终端激活申请
+activate adminWeb
+return 响应成功
+
+@enduml

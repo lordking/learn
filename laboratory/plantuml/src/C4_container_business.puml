@@ -1,0 +1,62 @@
+@startuml container
+!include core/C4_Container.puml
+
+title 智慧云屏系统容器图
+
+LAYOUT_TOP_DOWN
+
+Person(screen_admin, "运营管理员")
+Person(enterprise_admin, "企业管理员")
+Person(customer, "顾客")
+
+System_Boundary(waterdrop_system, "智慧云屏系统"){
+    Container(admin_screen_web, "企业管理前端", "Javascript, Nodejs", "为用户提供数据资源管理功能")
+
+    Container(admin_enterprise_web, "运营管理前端", "Javascript, Nodejs", "为运营管理员提供管理主题、平台产品及企业云屏功能")
+
+    Container(windows_app, "PC端-windows容器", "c#", "通过浏览器内核展示内容")
+
+    Container(waterdrop_service, "可配置数据服务", "Java, Spring Boot, Docker Container", "通过 API，提供数据资源的管理")
+    ContainerDb(waterdrop_bd, "可配置数据库", "MySQL", "存储动态模型，数据源，日志等等")
+
+    Container(render_service, "模板渲染服务", "Nodejs", "渲染客户定制模板")
+}
+
+Boundary(pivot, "统一门户"){
+    System_Ext(pivot_system, "账号系统", "提供统一登录，认证，获取用户信息")
+    System_Ext(portal_system, "统一门户前端", "提供前端的框架、认证缓存、应用集合")
+}
+
+System_Ext(cstore_system, "cstore", "提供CDN的账号获取和存储文件获取，由七牛云、阿里云服务等存储文件")
+System_Ext(cloud_system, "鲸云", "提供云原生平台应用的部署")
+System_Ext(cdn_system, "CDN", "提供文件下载")
+
+Rel(screen_admin, admin_enterprise_web, "使用", "HTTPS")
+Rel(enterprise_admin, admin_screen_web, "使用", "HTTPS")
+
+Rel_R(customer, windows_app, "观看，触摸", "H5")
+
+Rel_D(render_service, windows_app, "推送主题包到", "HTTPS")
+
+Rel(admin_screen_web, waterdrop_service, "管理数据源", "async, JSON/HTTPS")
+Rel(admin_enterprise_web, waterdrop_service, "管理数据结点", "async, JSON/HTTPS")
+
+Rel(waterdrop_service, waterdrop_bd, "写入和读取", "JDBC")
+
+Rel_L(render_service, waterdrop_service, "获取数据资源", "GraphGL, JSON/HTTPS")
+
+Rel(admin_screen_web, render_service, "发布", "HTTPS")
+
+Rel(admin_screen_web, cstore_system, "使用", "HTTPS")
+Rel_R(render_service, cstore_system, "使用", "HTTPS")
+Rel(admin_enterprise_web, cstore_system, "使用", "HTTPS")
+
+Rel(windows_app, cdn_system, "使用")
+
+Rel_U(admin_screen_web, portal_system, "嵌入", "webpack/vue-router")
+Rel_U(admin_enterprise_web, portal_system, "嵌入", "webpack/vue-router")
+Rel_U(waterdrop_service, pivot_system, "获取用户信息", "JSON/HTTPS")
+
+Rel_L(waterdrop_system, cloud_system, "部署到")
+
+@enduml

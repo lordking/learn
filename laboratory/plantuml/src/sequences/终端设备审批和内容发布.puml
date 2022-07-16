@@ -1,0 +1,91 @@
+@startuml
+
+title 终端设备审批和内容发布
+
+boundary "云屏设备\n(客户端容器)" as screenDevice
+actor 企业管理员 as admin
+boundary "企业管理前端" as adminWeb
+participant "后台资源服务\n<service>" as resourceService
+entity "entity_xxxxxxxxx_terminals" as terminal
+participant "渲染服务\n<service>" as renderService
+participant "文件CDN\n<service>" as storage
+
+autonumber
+activate screenDevice
+screenDevice -> adminWeb:申请激活
+activate adminWeb
+adminWeb -> resourceService: 生成一条终端信息，GraphQL请求保存
+activate resourceService
+resourceService -> terminal: 保存终端信息
+activate terminal
+return 保存成功
+return 保存成功
+return 响应成功
+
+activate admin
+admin -> adminWeb: 审核通过激活申请
+activate adminWeb
+adminWeb -> resourceService: 更新终端状态为"已激活"
+activate resourceService
+resourceService -> terminal: 保存终端信息
+activate terminal
+return 保存成功
+return 保存成功
+return 响应成功
+
+admin -> adminWeb: 为终端分配主题
+activate adminWeb
+adminWeb -> resourceService: 更新终端主题配置\n包括：主题ID、主题名称、主题版本、主题状态（未发布）
+activate resourceService
+resourceService -> terminal: 保存终端信息
+activate terminal
+return 保存成功
+return 保存成功
+return 响应成功
+
+admin -> adminWeb: 发布内容资源
+activate adminWeb
+
+
+
+adminWeb -> resourceService: 查找指定ID的主题的内容资源包
+activate resourceService
+return 查找结果
+
+opt 未找到文件信息
+adminWeb -> renderService: 请求渲染给定ID的主题
+activate renderService
+renderService -> renderService: 渲染主题
+renderService -> storage: 上传渲染出的内容资源包
+activate storage
+return 文件信息
+return 文件信息
+else 已找到文件信息
+adminWeb -> adminWeb: 复用文件信息
+end
+
+adminWeb -> resourceService: 更新终端内容资源包信息\n包括：文件大小、哈希值、URL
+activate resourceService
+resourceService -> terminal: 保存终端信息
+activate terminal
+return 保存成功
+return 保存成功
+return 响应成功
+deactivate admin
+
+screenDevice -> adminWeb: 查询设备状态和内容资源包信息
+activate adminWeb
+adminWeb -> resourceService: 查询设备状态和内容资源包信息
+activate resourceService
+resourceService -> terminal: 查询设备状态和内容资源包信息
+activate terminal
+return 状态和内容资源包信息
+return 状态和内容资源包信息
+return 状态和内容资源包信息
+
+screenDevice -> storage:下载内容资源包
+activate storage
+return 内容资源包文件
+
+screenDevice -> screenDevice: 解压、显示资源页面
+@enduml

@@ -1,0 +1,135 @@
+@startuml 定义数据
+
+title 定义数据
+
+actor 系统用户 as sysuser
+boundary Web端管理后台 as frontend
+participant "数据结点服务\n<Service>" as dataNodeService
+entity "数据结点\n<Model>" as dataNodeModel
+entity "元数据\n<Model>" as dataSchemaModel
+participant "动态模型驱动\n<Component>" as dynamicModelComponent
+
+opt 创建
+    sysuser -> frontend: 创建结点
+else 修改
+    sysuser -> frontend: 编辑结点
+end
+
+frontend -> frontend: 结点编辑界面
+note right 
+如果结点是实体，录入JSON 
+Schema格式的元数据定义
+end note
+sysuser -> frontend: 点击保存
+frontend -> dataNodeService: 保存结点()
+activate dataNodeService #FFBBBB
+
+dataNodeService -> dataNodeModel: 保存结点()
+
+opt 有元数据定义
+
+dataNodeService -> dataSchemaModel: 保存元数据()
+note right
+如果没有录入元数据的标
+识，采用结点的标识。
+end note
+
+dataNodeService -> dynamicModelComponent: 保存数据对象()
+note right
+根据元数据定义在数据库
+中创建数据对象
+end note
+
+else 无元数据定义
+
+dataNodeService -> dataNodeService: do nothing
+end
+
+@enduml
+
+@startuml 录入数据
+
+title 录入数据
+
+actor 系统用户 as sysuser
+boundary Web端管理后台 as frontend
+participant "数据结点服务\n<Service>" as dataNodeService
+participant "数据资源服务\n<Service>" as dataResourceService
+entity "数据结点\n<Model>" as dataNodeModel
+entity "元数据\n<Model>" as dataSchemaModel
+participant "动态模型驱动\n<Component>" as dynamicModelComponent
+
+== 打开导航栏 ==
+
+sysuser --> frontend: 打开首页
+frontend --> frontend: 左边导航栏显示菜单栏目
+frontend --> dataNodeService: 查询结点(所有)
+dataNodeService -> dataNodeModel: 批量查询(所有)
+
+== 点击栏目 ==
+
+sysuser -> frontend: 选择栏目
+frontend --> dataResourceService: 批量查询(结点路径, 分页查询)
+activate dataResourceService #FFBBBB
+note right
+结点路径，以英文标识组成的
+当前数据结点，使用’/‘分割,
+’/api/resources‘作为数据结点资源的根路径。
+举例:/api/resources/article/xx
+’article‘，是结点标识，关联到某个元数据。article，是实体结点。
+’xxx‘，article的某个目录
+end note
+
+dataResourceService --> dataSchemaModel: 查询元数据(实体结点标识)
+dataResourceService --> dynamicModelComponent: 批量查询(结点路径)
+dataResourceService --> dataResourceService: 数据转换
+deactivate dataResourceService
+
+== 录入数据 ==
+
+sysuser --> frontend: 保存数据
+frontend --> dataResourceService: 保存单个(结点路径)
+activate dataResourceService #FFBBBB
+dataResourceService --> dataSchemaModel: 查询元数据(实体结点标识)
+dataResourceService --> dataResourceService: 校验数据
+dataResourceService --> dynamicModelComponent: 保存数据(结点路径)
+deactivate dataResourceService
+
+@enduml
+
+@startuml 渲染网页
+
+actor "普通用户" as commonuser
+boundary "Web渲染服务" as renderSerivce
+participant "数据结点服务\n<Service>" as dataNodeService
+participant "数据资源服务\n<Service>" as dataResourceService
+entity "数据结点\n<Model>" as dataNodeModel
+entity "元数据\n<Model>" as dataSchemaModel
+participant "动态模型驱动\n<Component>" as dynamicModelComponent
+
+commonuser --> renderSerivce: 浏览网页
+activate renderSerivce #FFBBBB
+
+renderSerivce --> dataNodeService: 查询结点
+activate dataNodeService #DarkSalmon
+dataNodeService -> dataNodeModel: 查询结点(结点路径)
+note right
+结点路径，以英文标识组成的
+当前数据结点，使用’/‘分割,
+’/api/resources‘作为数据结点资源的根路径。
+举例:/api/resources/article/xx
+’article‘，是结点标识，关联到某个元数据。article，是实体结点。
+’xxx‘，article的某个目录
+end note
+deactivate dataNodeService
+renderSerivce --> dataResourceService: 查询数据资源(结点路径)
+activate dataResourceService #DarkSalmon
+dataResourceService --> dataSchemaModel: 查询元数据(实体结点标识)
+dataResourceService --> dynamicModelComponent: 查询数据资源()
+dataResourceService --> dataResourceService: 数据转换
+deactivate dataResourceService
+renderSerivce --> renderSerivce: 读取模板渲染
+note right: ejs
+deactivate renderSerivce
+
+@enduml

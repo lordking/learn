@@ -1,0 +1,53 @@
+@startuml
+
+title 搭建运营管理PaaS平台
+
+actor "云屏研发\n(超级管理员)" as screenPm
+boundary "运营管理前端" as screenWeb
+participant "结点服务\n<service>" as nodeService
+participant "资源服务\n<service>" as resourceService
+
+entity "数据结点" as nodes
+entity "数据浏览器" as browsers
+entity "数据编辑器" as editors
+
+autonumber
+screenPm -> screenWeb: 点击"创建对象"，输入描述结点的JSON字符串：\n包含Schema、浏览器和编辑器的定义
+activate screenWeb
+screenWeb -> nodeService: 创建对象结点，结点类型为"系统功能"或"平台产品"\n(企业编码为"000000000")
+activate nodeService
+
+nodeService -> nodes: 保存数据结点
+activate nodes
+return 保存成功
+nodeService -> browsers: 保存数据浏览器
+activate browsers
+return 保存成功
+nodeService -> editors: 保存数据编辑器
+activate editors
+return 保存成功
+
+opt 系统功能结点
+nodeService -> nodeService: 创建并加载结点的实体模型
+else 平台产品结点
+'平台产品结点，仅用于初始化SaaS服务，在PaaS平台无需创建对应的实体模型
+end
+return 创建成功
+
+screenWeb -> nodeService: 查询全部结点
+activate nodeService
+return 所有结点
+screenWeb -> screenWeb: 刷新页面\n加载新建的系统功能结点，显示结点树
+return 创建完成
+
+==  查看产品结点 ==
+autonumber
+
+screenPm -> screenWeb: 查看指定结点
+activate screenWeb
+screenWeb -> nodeService: 查询指定结点
+activate nodeService
+return 结点详情(JSON格式，包含Schema、数据浏览器和编辑器)
+return 显示结点内容
+
+@enduml

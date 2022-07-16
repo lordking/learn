@@ -1,0 +1,28 @@
+@startuml context
+!include core/C4_Context.puml
+
+title 智慧云屏系统上下文图
+
+LAYOUT_TOP_DOWN
+
+Person(admin, "管理员")
+
+System(waterdrop_system, "智慧云屏系统", "通过网页组件、主题和模板、元数据、脚本引擎等实现低代码开发的行业应用平台")
+
+Boundary(alias, "统一门户"){
+    System_Ext(pivot_system, "账号系统", "提供统一登录，认证，获取用户信息")
+    System_Ext(portal_system, "统一门户前端", "提供前端的框架、认证缓存、应用集合")
+}
+
+System_Ext(cstore_system, "cstore", "提供CDN的账号获取和存储文件获取，由七牛云、阿里云服务等存储文件")
+System_Ext(cloud_system, "鲸云", "提供云原生平台应用的部署")
+
+Rel(admin, waterdrop_system, "使用")
+Rel(waterdrop_system, pivot_system, "登录，认证，获取用户信息", "OAuth2.0/rest/HTTPS")
+Rel(waterdrop_system, cstore_system, "文件存储")
+
+Rel(waterdrop_system, cloud_system, "部署企业服务及产品")
+ 
+Rel(waterdrop_system, portal_system, "嵌入", "webpack/vue-router")
+
+@enduml

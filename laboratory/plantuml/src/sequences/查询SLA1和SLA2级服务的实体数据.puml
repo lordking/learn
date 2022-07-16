@@ -1,0 +1,30 @@
+@startuml
+
+title 查询SLA1和SLA2级服务的实体数据
+
+boundary "(企业/运营)管理后台" as adminWeb
+participant "数据资源服务\n<Service>" as resService
+participant 数据实体驱动 as dataDriver
+entity "数据实体" as dataEntity
+
+autonumber
+activate adminWeb
+adminWeb->resService: 给定GraphQL，查询指定企业的数据
+activate resService
+resService -> resService: 确定企业的服务级别
+opt SLA1
+    resService->resService: 实体名为Entity_Shared_<modelName>
+
+else SLA2
+    resService->resService: 实体名为Entity_<enterprise_code>_<modelName>
+
+end
+
+resService->dataDriver: 请求查询数据
+activate dataDriver
+dataDriver -> dataEntity: 执行数据库查询
+activate dataEntity
+return 返回数据
+return 返回数据
+return 返回数据
+@enduml

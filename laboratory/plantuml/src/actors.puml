@@ -1,0 +1,27 @@
+@startuml 用户角色定义
+
+left to right direction
+
+title 用户角色定义
+
+actor "系统用户" as sysuser
+actor  "程序员" as programer
+actor  "FAE" as fae
+actor  "企业管理员" as bizadmin
+actor  "超级管理员" as superbizadmin
+actor  "普通管理员" as commonbizadmin
+
+actor "测试" as tester
+actor "设计师" as designer
+actor "产品经理" as pm
+
+
+
+sysuser ..> fae: include
+sysuser ..> bizadmin: include
+sysuser ..> programer: include
+
+bizadmin ..> superbizadmin: include
+bizadmin ..> commonbizadmin: include
+
+@enduml

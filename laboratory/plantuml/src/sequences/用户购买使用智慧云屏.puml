@@ -1,0 +1,65 @@
+@startuml
+
+title 用户购买使用智慧云屏
+autonumber
+
+actor 企业用户 as screenUser
+actor 云屏销售 as seller
+actor "云屏产品经理\n(或运营管理员)" as screenPm
+
+boundary 统一门户 as loginWeb
+boundary "运营管理系统\nPaaS" as screenWeb
+boundary "企业管理系统\nSaaS" as enterpriseWeb
+
+
+boundary "云屏设备\n(客户端容器)" as screenDevice
+actor 门店顾客 as customers
+
+screenUser -> seller: 购买云屏
+activate screenUser
+activate seller
+
+seller -> screenPm: 提供客户信息和需求，请求创建云屏SaaS服务
+activate screenPm
+screenPm -> loginWeb: 登录
+activate loginWeb
+return 登录成功
+
+screenPm -> loginWeb: 注册企业及其管理员
+activate loginWeb
+return 注册成功
+
+screenPm -> screenWeb:依据企业编码等，配置云屏SaaS服务
+activate screenWeb
+return 配置成功
+return：提供企业编码、管理员账号
+return：交付云屏硬件设备，告知企业编码等
+
+screenUser -> screenDevice: 输入企业编码，一键激活
+activate screenDevice
+
+screenDevice -> enterpriseWeb: 注册设备ID等本机信息
+activate enterpriseWeb
+enterpriseWeb -> screenUser: 通知管理员处理设备注册申请\n(v1.1中暂不实现主动通知，登录管理端后可看到注册申请)
+screenUser -> enterpriseWeb: 允许注册
+return 注册成功
+return 激活成功
+
+screenUser -> loginWeb: 云屏管理员登录
+activate loginWeb
+return 登录成功
+
+screenUser -> enterpriseWeb: 进入管理界面，配置主题，录入数据，发布到云屏
+activate enterpriseWeb
+
+enterpriseWeb -> screenDevice: 发布主题和内容
+activate screenDevice
+return 发布成功
+return 响应成功
+deactivate screenUser
+
+screenDevice -> customers: 显示主题内容，吸引顾客，交互体验
+activate screenDevice
+activate customers
+
+@enduml

@@ -1,0 +1,70 @@
+@startuml 用户故事
+
+!include core/Story.puml
+
+title 水滴柔性开发平台 - 目标概述
+
+!define iwant 当面对不同行业的各种数据密集型的软件定制化需求， 可以根据模板自动生成一套定制化的软件提供给客户。
+!define sothat 大幅减少定制化开发的工作量，快速响应客户需求。 该平台可以生产内容网站、厅堂营销、商品管理、库存管理...
+
+' 看板
+' ##################################
+Story(story, "程序员", iwant, sothat)
+
+note right of story
+    衡量指标：
+    1.根据模板，一周内完成基于数据和内容的定制化开发。
+    2.通过配置，实现自定义的数据内容，可自定义字段
+    3.通过模板，实现定制化展示
+    4.通过客户端原生或服务器组件，实现数据内容不能实 现的功能 
+
+    检查手段：按行业分类的多个场景，提前开发的主题库供用户选择。
+    寻找1到多名开发人员，计算使用新平台的整体开发时间。
+end note
+
+' 活动
+' ##################################
+
+Activities_Boundary(c1, "柔性开发平台") {
+    ' 统一定义∏
+    ' ##################################
+
+    Activity(act_step1, "生成可配置系统","JavaServer/H5/docker", "在创建企业后或维护企业时，为企业创建一个可配置系统。 可配置系统包括Java后台、Web端管理后台、Web端网页服 务、 Windows桌面端。")
+    
+    Activity(act_theme, "主题库","H5/ejs", "根据不同行业和场景，提前设计相应的主题库。 一个主题库包括元数据、模板、插件、预制的数据内容。")
+
+    Activities_Boundary(c2, "可配置系统") {
+
+        Activity(act_backend, "后台数据","JavaServer/H5","在Web端管理后台，配置插件（Windows桌面端/服务端）、 元数据等数据，完成对用户需求的配置。录入数据，如文章、 商品信息。")
+        Activity(act_website, "前端模板","NodeJS/ejs","设计与开发Web端网页模板，在网页模板中加入插件。 在Web端管理后台，加载网页模板。预览网页效果。生 成静态网页。")
+        Activity(act_client, "客户端","Windows桌面程序","连接服务器，接受服务器通知，下载并显示网页和组件。 同时支持离线和在线两种方式显示网页。 ")
+    }
+}
+
+Activities_Boundary(c3, "私有化网络") {
+
+    Activity_Ext(user_server, "用户服务器","Linux/Windows/Docker","用户私有网络的服务器")
+    Activity_Ext(business_monitor, "商显设备","Linux/Windows/Docker","用户私有网络的服务器")
+}
+' Activity_Ext(openplatform, "成为用户的开发文档","开放平台","将对企业用户或第三方开发者 开放的接口开放到开放平台中")
+
+' 关系
+' ##################################
+
+act_step1 -down-> act_backend: 配置和管理后台系统的数据
+act_backend .right.> act_website: 插件
+act_step1 -left-> act_theme: 使用主题
+act_theme .down.> act_backend
+act_theme .down.> act_website
+act_step1 -down-> act_website: 制作模板
+act_website -down-> act_client: 发布网页和组件到桌面端
+
+user_server -down-> business_monitor 
+
+story ..> act_step1: 定制生成系统
+
+act_backend --> user_server: 私有化部署
+act_website --> user_server: 私有化部署
+act_client -> business_monitor: 私有化部署
+
+@enduml
