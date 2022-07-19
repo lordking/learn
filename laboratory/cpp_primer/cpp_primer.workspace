@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="Workspace">
+		<Project filename="HelloWorld/HelloWorld.cbp" />
+		<Project filename="Sample-Print/Sample-Print.cbp" />
+		<Project filename="Sample-Variable/Sample-Variable.cbp" />
+		<Project filename="Sample-DataType/Sample-DataType.cbp" />
+		<Project filename="Mad-Libs/Mad-Libs.cbp" />
+		<Project filename="Sample-Array/Sample-Array.cbp" />
+		<Project filename="Sample-Functon/Sample-Functon.cbp" />
+		<Project filename="Sample-Number/Sample-Number.cbp" />
+		<Project filename="Sample-String/Sample-String.cbp" />
+		<Project filename="Sample-Exponent-Function/Sample-Exponent-Function.cbp" />
+		<Project filename="Sample-Two-Dimensional-Array/Sample-Two-Dimensional-Array.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_workspace_layout_file>
 	<FileVersion major="1" minor="0" />
-	<ActiveProject path="../Sample-Array/Sample-Array.cbp" />
+	<ActiveProject path="Sample-Two-Dimensional-Array/Sample-Two-Dimensional-Array.cbp" />
+	<PreferredTarget name="Debug" />
 </CodeBlocks_workspace_layout_file>
